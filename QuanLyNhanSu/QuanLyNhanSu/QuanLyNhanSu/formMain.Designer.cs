@@ -38,6 +38,11 @@
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.btnSignup = new DevExpress.XtraBars.BarButtonItem();
             this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddNV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEditNV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDeleteNV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSearchNV = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,11 +55,6 @@
             this.ctMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTrangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTấtCảTrangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddNV = new DevExpress.XtraBars.BarButtonItem();
-            this.btnEditNV = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDeleteNV = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSearchNV = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabHienThi)).BeginInit();
@@ -140,6 +140,7 @@
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnSignup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSignup_ItemClick);
             // 
             // btnInfo
             // 
@@ -148,6 +149,52 @@
             this.btnInfo.ImageOptions.ImageIndex = 3;
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnAddNV
+            // 
+            this.btnAddNV.Caption = "Thêm Nhân Viên";
+            this.btnAddNV.Id = 7;
+            this.btnAddNV.ImageOptions.ImageIndex = 5;
+            this.btnAddNV.Name = "btnAddNV";
+            this.btnAddNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnEditNV
+            // 
+            this.btnEditNV.Caption = "Sửa Nhân Viên";
+            this.btnEditNV.Id = 8;
+            this.btnEditNV.ImageOptions.ImageIndex = 7;
+            this.btnEditNV.Name = "btnEditNV";
+            this.btnEditNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnDeleteNV
+            // 
+            this.btnDeleteNV.Caption = "Xóa Nhân Viên";
+            this.btnDeleteNV.Id = 9;
+            this.btnDeleteNV.ImageOptions.ImageIndex = 6;
+            this.btnDeleteNV.Name = "btnDeleteNV";
+            this.btnDeleteNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnSearchNV
+            // 
+            this.btnSearchNV.Caption = "Tìm Kiếm Nhân Viên";
+            this.btnSearchNV.Id = 10;
+            this.btnSearchNV.ImageOptions.ImageIndex = 8;
+            this.btnSearchNV.Name = "btnSearchNV";
+            this.btnSearchNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnSearchNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thông tin phần mềm";
+            this.barButtonItem1.Id = 11;
+            this.barButtonItem1.ImageOptions.ImageIndex = 9;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // ribbonPage3
@@ -237,52 +284,6 @@
             this.đóngTấtCảTrangToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.đóngTấtCảTrangToolStripMenuItem.Text = "Đóng tất cả trang";
             this.đóngTấtCảTrangToolStripMenuItem.Click += new System.EventHandler(this.đóngTấtCảTrangToolStripMenuItem_Click);
-            // 
-            // btnAddNV
-            // 
-            this.btnAddNV.Caption = "Thêm Nhân Viên";
-            this.btnAddNV.Id = 7;
-            this.btnAddNV.ImageOptions.ImageIndex = 5;
-            this.btnAddNV.Name = "btnAddNV";
-            this.btnAddNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // btnEditNV
-            // 
-            this.btnEditNV.Caption = "Sửa Nhân Viên";
-            this.btnEditNV.Id = 8;
-            this.btnEditNV.ImageOptions.ImageIndex = 7;
-            this.btnEditNV.Name = "btnEditNV";
-            this.btnEditNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // btnDeleteNV
-            // 
-            this.btnDeleteNV.Caption = "Xóa Nhân Viên";
-            this.btnDeleteNV.Id = 9;
-            this.btnDeleteNV.ImageOptions.ImageIndex = 6;
-            this.btnDeleteNV.Name = "btnDeleteNV";
-            this.btnDeleteNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // btnSearchNV
-            // 
-            this.btnSearchNV.Caption = "Tìm Kiếm Nhân Viên";
-            this.btnSearchNV.Id = 10;
-            this.btnSearchNV.ImageOptions.ImageIndex = 8;
-            this.btnSearchNV.Name = "btnSearchNV";
-            this.btnSearchNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnSearchNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Thông tin phần mềm";
-            this.barButtonItem1.Id = 11;
-            this.barButtonItem1.ImageOptions.ImageIndex = 9;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // formMain
             // 

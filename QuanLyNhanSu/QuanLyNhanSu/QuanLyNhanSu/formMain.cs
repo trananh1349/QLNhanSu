@@ -68,7 +68,7 @@ namespace QuanLyNhanSu
 
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages(Views.uctLogin.login, 4, "Đăng Nhập");
+            AddTabPages(Views.uctDangNhap.login, 4, "Đăng Nhập");
         }
 
         private void đóngTrangToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,6 +84,11 @@ namespace QuanLyNhanSu
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void btnSignup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctDangKy.signup, 4, "Đăng Ký");
         }
     }
 }
