@@ -17,5 +17,6 @@ namespace QuanLyNhanSu.Views
         {
             InitializeComponent();
         }
+        public static uctTimKiemNV timkiemnv = new uctTimKiemNV();
     }
 }

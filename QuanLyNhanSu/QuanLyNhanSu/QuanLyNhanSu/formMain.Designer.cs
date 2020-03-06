@@ -159,6 +159,7 @@
             this.btnAddNV.Name = "btnAddNV";
             this.btnAddNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnAddNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddNV_ItemClick);
             // 
             // btnEditNV
             // 
@@ -168,6 +169,7 @@
             this.btnEditNV.Name = "btnEditNV";
             this.btnEditNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnEditNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditNV_ItemClick);
             // 
             // btnDeleteNV
             // 
@@ -177,6 +179,7 @@
             this.btnDeleteNV.Name = "btnDeleteNV";
             this.btnDeleteNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDeleteNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteNV_ItemClick);
             // 
             // btnSearchNV
             // 
