@@ -83,12 +83,27 @@ namespace QuanLyNhanSu
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            AddTabPages(Views.uctTimKiemNV.timkiemnv, 4, "Tìm kiếm nhân viên");
         }
 
         private void btnSignup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages(Views.uctDangKy.signup, 4, "Đăng Ký");
+        }
+
+        private void btnAddNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctThemNV.themnv, 4, "Thêm nhân viên");
+        }
+
+        private void btnEditNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctSuaNV.suanv, 4, "Sửa nhân viên");
+        }
+
+        private void btnDeleteNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctXoaNV.xoanv, 4, "Xóa nhân viên");
         }
     }
 }

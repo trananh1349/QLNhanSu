@@ -30,8 +30,6 @@
         {
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -44,7 +42,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(371, 278);
+            this.btnCancel.Location = new System.Drawing.Point(353, 260);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 37);
             this.btnCancel.TabIndex = 21;
@@ -53,8 +51,6 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.linkLabel1);
-            this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.tbPassword);
@@ -62,28 +58,9 @@
             this.groupControl1.Controls.Add(this.tbUsername);
             this.groupControl1.Location = new System.Drawing.Point(53, 35);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(506, 204);
+            this.groupControl1.Size = new System.Drawing.Size(507, 154);
             this.groupControl1.TabIndex = 19;
             this.groupControl1.Text = "Thông Tin Đăng Nhập";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(327, 173);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(48, 13);
-            this.linkLabel1.TabIndex = 13;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Đăng Ký";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(212, 173);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Bạn đã có tài khoản ?";
             // 
             // label3
             // 
@@ -133,7 +110,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(172, 278);
+            this.btnLogin.Location = new System.Drawing.Point(154, 260);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(117, 37);
             this.btnLogin.TabIndex = 20;
@@ -141,14 +118,14 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // uctLogin
+            // uctDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.btnLogin);
-            this.Name = "uctLogin";
+            this.Name = "uctDangNhap";
             this.Size = new System.Drawing.Size(650, 362);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -161,8 +138,6 @@
 
         private System.Windows.Forms.Button btnCancel;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPassword;

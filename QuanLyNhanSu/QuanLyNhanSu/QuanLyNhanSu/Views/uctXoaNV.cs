@@ -17,5 +17,6 @@ namespace QuanLyNhanSu.Views
         {
             InitializeComponent();
         }
+        public static uctXoaNV xoanv = new uctXoaNV();
     }
 }
