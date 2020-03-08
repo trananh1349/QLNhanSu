@@ -58,13 +58,13 @@ namespace QuanLyNhanSu
         private void formMain_Load(object sender, EventArgs e)
         {
             Skin();
-            btnThongTin.Enabled = false;
-            btnChangePassword.Enabled = false;
-            btnLogout.Enabled = false;
-            btnAddNV.Enabled = false;
-            btnEditNV.Enabled = false;
-            btnDeleteNV.Enabled = false;
-            btnSearchNV.Enabled = false;
+            //btnThongTin.Enabled = false;
+            //btnChangePassword.Enabled = false;
+            //btnLogout.Enabled = false;
+            //btnAddNV.Enabled = false;
+            //btnEditNV.Enabled = false;
+            //btnDeleteNV.Enabled = false;
+            //btnSearchNV.Enabled = false;
         }
         private void formMain_FormClosing(object sender, FormClosingEventArgs e)
         {

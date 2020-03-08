@@ -43,7 +43,7 @@ namespace QuanLyNhanSu.Views
                 isLogin = true;
                 XtraMessageBox.Show("Đăng nhập thành công !","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 formMain form = new formMain();
-                form.btn
+                //form.btn
             }
             else
             {
