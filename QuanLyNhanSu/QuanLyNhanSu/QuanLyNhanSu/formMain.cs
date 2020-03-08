@@ -57,7 +57,14 @@ namespace QuanLyNhanSu
         }
         private void formMain_Load(object sender, EventArgs e)
         {
-            Skin();           
+            Skin();
+            btnThongTin.Enabled = false;
+            btnChangePassword.Enabled = false;
+            btnLogout.Enabled = false;
+            btnAddNV.Enabled = false;
+            btnEditNV.Enabled = false;
+            btnDeleteNV.Enabled = false;
+            btnSearchNV.Enabled = false;
         }
         private void formMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -69,6 +76,8 @@ namespace QuanLyNhanSu
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages(Views.uctDangNhap.login, 4, "Đăng Nhập");
+            if (Views.uctDangNhap.isLogin)
+                btnDangNhap.Enabled = false;
         }
 
         private void đóngTrangToolStripMenuItem_Click(object sender, EventArgs e)
