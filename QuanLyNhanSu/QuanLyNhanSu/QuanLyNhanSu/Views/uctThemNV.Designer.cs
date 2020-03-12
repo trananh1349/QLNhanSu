@@ -30,6 +30,12 @@
         {
             this.lblBuffer = new System.Windows.Forms.Label();
             this.gboxthemmoi = new System.Windows.Forms.GroupBox();
+            this.comboBoxTrinhDo = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBoxChuVu = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxPhongBan = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButtonNam = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,12 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBoxPhongBan = new System.Windows.Forms.ComboBox();
-            this.comboBoxChuVu = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBoxTrinhDo = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.gboxthemmoi.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,75 @@
             this.gboxthemmoi.TabStop = false;
             this.gboxthemmoi.Text = "Thêm mới nhân viên";
             this.gboxthemmoi.Enter += new System.EventHandler(this.Gboxthemmoi_Enter);
+            // 
+            // comboBoxTrinhDo
+            // 
+            this.comboBoxTrinhDo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTrinhDo.FormattingEnabled = true;
+            this.comboBoxTrinhDo.Items.AddRange(new object[] {
+            "Development",
+            "Manager",
+            "Test"});
+            this.comboBoxTrinhDo.Location = new System.Drawing.Point(429, 183);
+            this.comboBoxTrinhDo.Name = "comboBoxTrinhDo";
+            this.comboBoxTrinhDo.Size = new System.Drawing.Size(283, 29);
+            this.comboBoxTrinhDo.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(426, 157);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 18);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Trình độ: ";
+            // 
+            // comboBoxChuVu
+            // 
+            this.comboBoxChuVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxChuVu.FormattingEnabled = true;
+            this.comboBoxChuVu.Items.AddRange(new object[] {
+            "Ban Giám Đốc",
+            "Trưởng phòng",
+            "Nhân viên"});
+            this.comboBoxChuVu.Location = new System.Drawing.Point(429, 320);
+            this.comboBoxChuVu.Name = "comboBoxChuVu";
+            this.comboBoxChuVu.Size = new System.Drawing.Size(283, 29);
+            this.comboBoxChuVu.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(426, 294);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 18);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Chức vụ:";
+            // 
+            // comboBoxPhongBan
+            // 
+            this.comboBoxPhongBan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPhongBan.FormattingEnabled = true;
+            this.comboBoxPhongBan.Items.AddRange(new object[] {
+            "Phòng Kỹ thuật",
+            "Phòng Hành Chính"});
+            this.comboBoxPhongBan.Location = new System.Drawing.Point(429, 251);
+            this.comboBoxPhongBan.Name = "comboBoxPhongBan";
+            this.comboBoxPhongBan.Size = new System.Drawing.Size(283, 29);
+            this.comboBoxPhongBan.TabIndex = 22;
+            this.comboBoxPhongBan.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(426, 224);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 18);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Phòng ban: ";
             // 
             // radioButton1
             // 
@@ -306,82 +375,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ và tên: ";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(426, 224);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 18);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Phòng ban: ";
-            // 
-            // comboBoxPhongBan
-            // 
-            this.comboBoxPhongBan.Enabled = false;
-            this.comboBoxPhongBan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxPhongBan.FormattingEnabled = true;
-            this.comboBoxPhongBan.Items.AddRange(new object[] {
-            "Phòng Kỹ thuật",
-            "Phòng Hành Chính"});
-            this.comboBoxPhongBan.Location = new System.Drawing.Point(429, 251);
-            this.comboBoxPhongBan.Name = "comboBoxPhongBan";
-            this.comboBoxPhongBan.Size = new System.Drawing.Size(283, 29);
-            this.comboBoxPhongBan.TabIndex = 22;
-            this.comboBoxPhongBan.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
-            // 
-            // comboBoxChuVu
-            // 
-            this.comboBoxChuVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxChuVu.FormattingEnabled = true;
-            this.comboBoxChuVu.Items.AddRange(new object[] {
-            "Ban Giám Đốc",
-            "Trưởng phòng",
-            "Nhân viên"});
-            this.comboBoxChuVu.Location = new System.Drawing.Point(429, 320);
-            this.comboBoxChuVu.Name = "comboBoxChuVu";
-            this.comboBoxChuVu.Size = new System.Drawing.Size(283, 29);
-            this.comboBoxChuVu.TabIndex = 24;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(426, 294);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 18);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Chức vụ:";
-            // 
-            // comboBoxTrinhDo
-            // 
-            this.comboBoxTrinhDo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTrinhDo.FormattingEnabled = true;
-            this.comboBoxTrinhDo.Items.AddRange(new object[] {
-            "Development",
-            "Manager",
-            "Test"});
-            this.comboBoxTrinhDo.Location = new System.Drawing.Point(429, 183);
-            this.comboBoxTrinhDo.Name = "comboBoxTrinhDo";
-            this.comboBoxTrinhDo.Size = new System.Drawing.Size(283, 29);
-            this.comboBoxTrinhDo.TabIndex = 26;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(426, 157);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 18);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Trình độ: ";
-            // 
             // uctThemNV
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.Controls.Add(this.gboxthemmoi);
             this.Controls.Add(this.lblBuffer);
             this.Name = "uctThemNV";
