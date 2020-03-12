@@ -16,6 +16,7 @@ namespace QuanLyNhanSu.Views
     public partial class uctThemNV : DevExpress.XtraEditors.XtraUserControl
     {
         AccessDataBase nhanvien = new AccessDataBase();
+        
         public uctThemNV()
         {
             InitializeComponent();
@@ -24,6 +25,9 @@ namespace QuanLyNhanSu.Views
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            string sqlconnectStr = "Data Source=DESKTOP-PGQHHD3\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(sqlconnectStr);
+            connection.Open();
             string gioiTinh,maphongBan,maloaiHopDong,machucVu,maNhanVien,maLuong,maTrinhDo;
             //Mã nhân viên
             maNhanVien = "BA" + txbCMND.Text;
@@ -61,21 +65,43 @@ namespace QuanLyNhanSu.Views
                 maTrinhDo = "2";
             else
                 maTrinhDo = "3";
-            //lương
-            int luong = Convert.ToInt32(txbLuong.Text);
-            if (luong <= 1000000)
-                maLuong = "LuongCTV"+txbCMND.Text;
-            else
-                maLuong = "LuongHDLD"+txbCMND.Text;
+            int dem = 0;
+            SqlCommand query_name = new SqlCommand("SELECT CMTND FROM NhanVien WHERE CMTND LIKE '" + txbCMND.Text + "'", connection);
+            using (SqlDataReader reader = query_name.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    // Đọc kết quả
+                    while (reader.Read())
+                    {
+                        Console.WriteLine("{0}", reader[0].ToString());
+                        if (reader[0].ToString().Equals(txbCMND.Text))
+                            dem = 1;
 
-            //chạy lệnh update Lương
-            SqlCommand query0 = new SqlCommand("INSERT Luong values ('" + maLuong + "','1','" + txbLuong.Text +"')");
-            nhanvien.executeQuery(query0);
-            ////chạy lệnh update nhân viên
-            SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "','" + txbhoTen.Text + "', '" + ngaySinh.Value.ToString() + "'," +
-                " '" + gioiTinh + "', '" + txbDanToc.Text + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', '"
-                + txbDiaChi.Text + "', '" + maphongBan + "', '" + machucVu + "', '" + maloaiHopDong + "', '" + maTrinhDo + "', '" + maLuong + "')");
-            nhanvien.executeQuery(query);
+                    }
+                }
+            }
+            if (dem==1)
+                XtraMessageBox.Show("Nhân viên đã tồn tại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                //lương
+                int luong = Convert.ToInt32(txbLuong.Text);
+                if (luong <= 1000000)
+                    maLuong = "LuongCTV" + txbCMND.Text;
+                else
+                    maLuong = "LuongHDLD" + txbCMND.Text;
+
+                //chạy lệnh update Lương
+                SqlCommand query0 = new SqlCommand("INSERT Luong values ('" + maLuong + "','1','" + txbLuong.Text + "')");
+                nhanvien.executeQuery(query0);
+                ////chạy lệnh update nhân viên
+                SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "','" + txbhoTen.Text + "', '" + ngaySinh.Value.ToString() + "'," +
+                    " '" + gioiTinh + "', '" + txbDanToc.Text + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', '"
+                    + txbDiaChi.Text + "', '" + maphongBan + "', '" + machucVu + "', '" + maloaiHopDong + "', '" + maTrinhDo + "', '" + maLuong + "')");
+                nhanvien.executeQuery(query);
+                XtraMessageBox.Show("Thêm mới nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
