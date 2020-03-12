@@ -13,7 +13,7 @@ namespace QuanLyNhanSu.Models
         private static SqlConnection connection = new SqlConnection();
         private static SqlCommand command = new SqlCommand();
         private static SqlDataAdapter adapter = new SqlDataAdapter();
-        private static string strConnString = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+        private static string strConnString = "Data Source=DESKTOP-PGQHHD3\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
         public void createConn()
         {
             try
