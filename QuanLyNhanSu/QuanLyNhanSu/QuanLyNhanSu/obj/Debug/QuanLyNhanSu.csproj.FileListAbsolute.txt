@@ -161,3 +161,15 @@ C:\Users\vietm\Desktop\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug
 C:\Users\vietm\Desktop\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.CopyComplete
 C:\Users\vietm\Desktop\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
 C:\Users\vietm\Desktop\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Views.uctThemNV.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojAssemblyReference.cache
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.formMain.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Views.uctDangNhap.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Views.uctDangKy.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Views.uctSuaNV.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Views.uctThemNV.resources
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.cache
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe.licenses
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+D:\Study\College Stuff\Nam3\Kỳ 2\Thực tập nhóm\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb

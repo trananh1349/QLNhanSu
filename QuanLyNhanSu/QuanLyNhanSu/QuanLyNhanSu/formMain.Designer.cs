@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnChangePassword = new DevExpress.XtraBars.BarButtonItem();
             this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.btnSignup = new DevExpress.XtraBars.BarButtonItem();
-            this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangKy = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongTin = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddNV = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditNV = new DevExpress.XtraBars.BarButtonItem();
             this.btnDeleteNV = new DevExpress.XtraBars.BarButtonItem();
@@ -68,12 +68,12 @@
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
             this.ribbonControl.SearchEditItem,
-            this.btnLogin,
+            this.btnDangNhap,
             this.btnChangePassword,
             this.btnLogout,
             this.skinRibbonGalleryBarItem1,
-            this.btnSignup,
-            this.btnInfo,
+            this.btnDangKy,
+            this.btnThongTin,
             this.btnAddNV,
             this.btnEditNV,
             this.btnDeleteNV,
@@ -102,15 +102,15 @@
             this.imageCollection.Images.SetKeyName(8, "Search_user.png");
             this.imageCollection.Images.SetKeyName(9, "Info-icon.png");
             // 
-            // btnLogin
+            // btnDangNhap
             // 
-            this.btnLogin.Caption = "Đăng nhập";
-            this.btnLogin.Id = 1;
-            this.btnLogin.ImageOptions.ImageIndex = 2;
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnDangNhap.Caption = "Đăng nhập";
+            this.btnDangNhap.Id = 1;
+            this.btnDangNhap.ImageOptions.ImageIndex = 2;
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogin_ItemClick);
+            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogin_ItemClick);
             // 
             // btnChangePassword
             // 
@@ -132,23 +132,23 @@
             this.skinRibbonGalleryBarItem1.Id = 4;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
-            // btnSignup
+            // btnDangKy
             // 
-            this.btnSignup.Caption = "Đăng Ký";
-            this.btnSignup.Id = 5;
-            this.btnSignup.ImageOptions.ImageIndex = 4;
-            this.btnSignup.Name = "btnSignup";
-            this.btnSignup.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnDangKy.Caption = "Đăng Ký";
+            this.btnDangKy.Id = 5;
+            this.btnDangKy.ImageOptions.ImageIndex = 4;
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnSignup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSignup_ItemClick);
+            this.btnDangKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSignup_ItemClick);
             // 
-            // btnInfo
+            // btnThongTin
             // 
-            this.btnInfo.Caption = "Thôngtin";
-            this.btnInfo.Id = 6;
-            this.btnInfo.ImageOptions.ImageIndex = 3;
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnThongTin.Caption = "Thôngtin";
+            this.btnThongTin.Id = 6;
+            this.btnThongTin.ImageOptions.ImageIndex = 3;
+            this.btnThongTin.Name = "btnThongTin";
+            this.btnThongTin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // btnAddNV
@@ -210,9 +210,9 @@
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnInfo);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnLogin);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnSignup);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnThongTin);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnDangNhap);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnDangKy);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnChangePassword);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnLogout);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
@@ -315,7 +315,7 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
-        private DevExpress.XtraBars.BarButtonItem btnLogin;
+        private DevExpress.XtraBars.BarButtonItem btnDangNhap;
         private DevExpress.XtraBars.BarButtonItem btnChangePassword;
         private DevExpress.XtraBars.BarButtonItem btnLogout;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
@@ -329,8 +329,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraTab.XtraTabControl tabHienThi;
-        private DevExpress.XtraBars.BarButtonItem btnSignup;
-        private DevExpress.XtraBars.BarButtonItem btnInfo;
+        private DevExpress.XtraBars.BarButtonItem btnDangKy;
+        private DevExpress.XtraBars.BarButtonItem btnThongTin;
         private System.Windows.Forms.ContextMenuStrip ctMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem đóngTrangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đóngTấtCảTrangToolStripMenuItem;
