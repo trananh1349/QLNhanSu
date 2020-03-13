@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QuanLyNhanSu.Models;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace QuanLyNhanSu.Views
 {
@@ -22,7 +23,11 @@ namespace QuanLyNhanSu.Views
             InitializeComponent();
         }
         public static uctThemNV themnv = new uctThemNV();
-
+        public bool IsNumber(string pText)
+        {
+            Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+            return regex.IsMatch(pText);
+        }
         private void Button1_Click(object sender, EventArgs e)
         {
             string sqlconnectStr = "Data Source=DESKTOP-PGQHHD3\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
@@ -93,21 +98,28 @@ namespace QuanLyNhanSu.Views
                 else
                 {
                     //lương
-                    int luong = Convert.ToInt32(txbLuong.Text);
-                    if (luong <= 1000000)
-                        maLuong = "LuongCTV" + txbCMND.Text;
+                    if (IsNumber(txbLuong.Text) == true && IsNumber(txbCMND.Text)==true && IsNumber(txbSDT.Text)==true
+                        )
+                    {
+                        int luong = Convert.ToInt32(txbLuong.Text);
+                        if (luong <= 1000000)
+                            maLuong = "LuongCTV" + txbCMND.Text;
+                        else
+                            maLuong = "LuongHDLD" + txbCMND.Text;
+                        //chạy lệnh update Lương
+                        SqlCommand query0 = new SqlCommand("INSERT Luong values ('" + maLuong + "','1','" + txbLuong.Text + "')");
+                        nhanvien.executeQuery(query0);
+                        //chạy lệnh update nhân viên
+                        SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "','" + txbhoTen.Text + "', '" + ngaySinh.Value.ToString() + "'," +
+                            " '" + gioiTinh + "', '" + txbDanToc.Text + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', '"
+                            + txbDiaChi.Text + "', '" + maphongBan + "', '" + machucVu + "', '" + maloaiHopDong + "', '" + maTrinhDo + "', '" + maLuong + "')");
+                        nhanvien.executeQuery(query);
+                        XtraMessageBox.Show("Thêm mới nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     else
-                        maLuong = "LuongHDLD" + txbCMND.Text;
-
-                    //chạy lệnh update Lương
-                    SqlCommand query0 = new SqlCommand("INSERT Luong values ('" + maLuong + "','1','" + txbLuong.Text + "')");
-                    nhanvien.executeQuery(query0);
-                    ////chạy lệnh update nhân viên
-                    SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "','" + txbhoTen.Text + "', '" + ngaySinh.Value.ToString() + "'," +
-                        " '" + gioiTinh + "', '" + txbDanToc.Text + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', '"
-                        + txbDiaChi.Text + "', '" + maphongBan + "', '" + machucVu + "', '" + maloaiHopDong + "', '" + maTrinhDo + "', '" + maLuong + "')");
-                    nhanvien.executeQuery(query);
-                    XtraMessageBox.Show("Thêm mới nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    {
+                        XtraMessageBox.Show("Thông tin nhập vào không đúng định dạng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
