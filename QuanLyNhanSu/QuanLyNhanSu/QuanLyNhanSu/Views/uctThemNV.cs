@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QuanLyNhanSu.Models;
@@ -27,6 +20,17 @@ namespace QuanLyNhanSu.Views
         {
             Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
             return regex.IsMatch(pText);
+        }
+        public string StandardString(string strInput)
+        {
+            strInput = strInput.Trim().ToLower();
+            while (strInput.Contains("  "))
+                strInput = strInput.Replace("  ", " ");
+            string strResult = "";
+            string[] arrResult = strInput.Split(' ');
+            foreach (string item in arrResult)
+                strResult += item.Substring(0, 1).ToUpper() + item.Substring(1) + " ";
+            return strResult.TrimEnd();
         }
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -110,8 +114,8 @@ namespace QuanLyNhanSu.Views
                         SqlCommand query0 = new SqlCommand("INSERT Luong values ('" + maLuong + "','1','" + txbLuong.Text + "')");
                         nhanvien.executeQuery(query0);
                         //chạy lệnh update nhân viên
-                        SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "','" + txbhoTen.Text + "', '" + ngaySinh.Value.ToString() + "'," +
-                            " '" + gioiTinh + "', '" + txbDanToc.Text + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', '"
+                        SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "','" + StandardString(txbhoTen.Text) + "', '" + ngaySinh.Value.ToString() + "'," +
+                            " '" + gioiTinh + "', '" + StandardString(txbDanToc.Text) + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', '"
                             + txbDiaChi.Text + "', '" + maphongBan + "', '" + machucVu + "', '" + maloaiHopDong + "', '" + maTrinhDo + "', '" + maLuong + "')");
                         nhanvien.executeQuery(query);
                         XtraMessageBox.Show("Thêm mới nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
