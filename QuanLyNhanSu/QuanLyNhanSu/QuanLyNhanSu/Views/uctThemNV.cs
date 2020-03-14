@@ -34,7 +34,7 @@ namespace QuanLyNhanSu.Views
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            string sqlconnectStr = "Data Source=DESKTOP-PGQHHD3\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            string sqlconnectStr = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
             SqlConnection connection = new SqlConnection(sqlconnectStr);
             connection.Open();
             string gioiTinh, maphongBan, maloaiHopDong, machucVu, maNhanVien, maLuong, maTrinhDo;
