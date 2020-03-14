@@ -20,6 +20,7 @@ namespace QuanLyNhanSu.Views
         }
 
         Models.AccessDataBase dbAccess = new Models.AccessDataBase();
+        formLogin formLogin = new formLogin();
         public static uctDoiMatKhau uctChangePassword = new uctDoiMatKhau();
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -33,14 +34,14 @@ namespace QuanLyNhanSu.Views
                 XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin ! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            command.CommandText = "select * from DangNhap where password = '" + password + "'";
+            command.CommandText = "select * from DangNhap where password = '" + password + "' and username = '" + formLogin.gUserName + "'";
             string result = (string)dbAccess.executeSelectQuery(command);
-            if (result != "")
+            if (result == "")
             {
-                XtraMessageBox.Show("Đã tồn tại username ! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Mật khẩu hiện tại không đúng ! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (password != cfPassword)
+            if (newPassword != cfPassword)
             {
                 XtraMessageBox.Show("Mật khẩu xác nhận không đúng ! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

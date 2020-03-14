@@ -21,7 +21,7 @@ namespace QuanLyNhanSu
         Models.AccessDataBase dbAccess = new Models.AccessDataBase();
         DataTable dtUsers = new DataTable();
         public static string maNV, hoTen, gioiTinh, danToc,
-            cmnd, soDt, diaChi, maPB, maCV, maTD, ngaySinh;
+            cmnd, soDt, diaChi, maPB, maCV, maTD, ngaySinh,gPassword,gUserName;
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
@@ -58,6 +58,8 @@ namespace QuanLyNhanSu
             if (dtUsers.Rows.Count != 0)
             {
                 isLogin = true;
+                gPassword = password;
+                gUserName = username;
                 DialogResult log = XtraMessageBox.Show("Đăng nhập thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (log == DialogResult.OK)
