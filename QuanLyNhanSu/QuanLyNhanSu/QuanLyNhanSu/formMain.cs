@@ -45,7 +45,7 @@ namespace QuanLyNhanSu
         }
         public void DongTatCaTab()
         {
-            while(tabHienThi.TabPages.Count > 0)
+            while (tabHienThi.TabPages.Count > 0)
             {
                 DongTabHienTai();
             }
@@ -70,14 +70,14 @@ namespace QuanLyNhanSu
         {
             DialogResult dialog = XtraMessageBox.Show("Bạn có muốn thoát ? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.No)
-                e.Cancel = true;  
+                e.Cancel = true;
         }
 
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages(Views.uctDangNhap.login, 4, "Đăng Nhập");
-            if (Views.uctDangNhap.isLogin)
-                btnDangNhap.Enabled = false;
+
+
         }
 
         private void đóngTrangToolStripMenuItem_Click(object sender, EventArgs e)

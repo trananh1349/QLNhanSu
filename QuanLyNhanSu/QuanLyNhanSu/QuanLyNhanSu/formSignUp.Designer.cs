@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSignUp));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbConfirmPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.textBox1);
+            this.groupControl1.Controls.Add(this.tbConfirmPassword);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.tbPassword);
@@ -68,14 +68,14 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Nhập lại mật khẩu";
             // 
-            // textBox1
+            // tbConfirmPassword
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.textBox1.Location = new System.Drawing.Point(184, 183);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(266, 32);
-            this.textBox1.TabIndex = 16;
+            this.tbConfirmPassword.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.tbConfirmPassword.Location = new System.Drawing.Point(184, 183);
+            this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.PasswordChar = '*';
+            this.tbConfirmPassword.Size = new System.Drawing.Size(266, 32);
+            this.tbConfirmPassword.TabIndex = 16;
             // 
             // label3
             // 
@@ -131,6 +131,7 @@
             this.btnCancelSignUp.TabIndex = 14;
             this.btnCancelSignUp.Text = "Hủy";
             this.btnCancelSignUp.UseVisualStyleBackColor = true;
+            this.btnCancelSignUp.Click += new System.EventHandler(this.btnCancelSignUp_Click);
             // 
             // btnSignUp
             // 
@@ -140,6 +141,7 @@
             this.btnSignUp.TabIndex = 13;
             this.btnSignUp.Text = "Đăng Ký";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // formSignUp
             // 
@@ -164,7 +166,7 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbConfirmPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPassword;

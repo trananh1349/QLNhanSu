@@ -13,7 +13,8 @@ namespace QuanLyNhanSu.Models
         private static SqlConnection connection = new SqlConnection();
         private static SqlCommand command = new SqlCommand();
         private static SqlDataAdapter adapter = new SqlDataAdapter();
-        private static string strConnString = "Data Source=DESKTOP-PGQHHD3\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+        //private static string strConnString = "Data Source=DESKTOP-PGQHHD3\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+        private static string strConnString = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
         public void createConn()
         {
             try
@@ -38,6 +39,22 @@ namespace QuanLyNhanSu.Models
                 dbCommend.Connection = connection;
                 dbCommend.CommandType = CommandType.Text;
                 return dbCommend.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        public object executeSelectQuery(SqlCommand dbCommend)
+        {
+            try
+            {
+                if (connection.State == 0)
+                    createConn();
+                dbCommend.Connection = connection;
+                dbCommend.CommandType = CommandType.Text;
+                return dbCommend.ExecuteScalar();
             }
             catch (Exception err)
             {
