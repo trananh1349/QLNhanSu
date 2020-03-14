@@ -118,6 +118,8 @@
             this.btnChangePassword.Id = 2;
             this.btnChangePassword.ImageOptions.ImageIndex = 0;
             this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // btnLogout
             // 
@@ -125,6 +127,8 @@
             this.btnLogout.Id = 3;
             this.btnLogout.ImageOptions.ImageIndex = 1;
             this.btnLogout.Name = "btnLogout";
+            this.btnLogout.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -211,8 +215,6 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnThongTin);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnDangNhap);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnDangKy);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnChangePassword);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnLogout);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";

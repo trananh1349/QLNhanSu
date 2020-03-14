@@ -103,8 +103,6 @@ F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\ru\DevEx
 F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojAssemblyReference.cache
 F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.formMain.resources
 F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
-F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Views.uctDangNhap.resources
-F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Views.uctDangKy.resources
 F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.cache
 F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe.licenses
 F:\GitProject\QLNhanSu\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.CopyComplete

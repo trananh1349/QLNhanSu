@@ -79,23 +79,11 @@
     <Compile Include="Views\uctXoaNV.Designer.cs">
       <DependentUpon>uctXoaNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\uctDangNhap.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\uctDangNhap.Designer.cs">
-      <DependentUpon>uctDangNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\uctTimKiemNV.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\uctTimKiemNV.Designer.cs">
       <DependentUpon>uctTimKiemNV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\uctDangKy.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\uctDangKy.Designer.cs">
-      <DependentUpon>uctDangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\uctSuaNV.cs">
       <SubType>UserControl</SubType>
@@ -128,12 +116,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\uctDangNhap.resx">
-      <DependentUpon>uctDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\uctDangKy.resx">
-      <DependentUpon>uctDangKy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\uctSuaNV.resx">
       <DependentUpon>uctSuaNV.cs</DependentUpon>
     </EmbeddedResource>

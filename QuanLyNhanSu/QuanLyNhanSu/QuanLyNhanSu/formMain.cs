@@ -75,8 +75,6 @@ namespace QuanLyNhanSu
 
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages(Views.uctDangNhap.login, 4, "Đăng Nhập");
-
 
         }
 
@@ -97,7 +95,7 @@ namespace QuanLyNhanSu
 
         private void btnSignup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages(Views.uctDangKy.signup, 4, "Đăng Ký");
+            
         }
 
         private void btnAddNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
