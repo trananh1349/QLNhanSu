@@ -73,6 +73,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\uctDoiMatKhau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctDoiMatKhau.Designer.cs">
+      <DependentUpon>uctDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\uctXoaNV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\uctDoiMatKhau.resx">
+      <DependentUpon>uctDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\uctSuaNV.resx">
       <DependentUpon>uctSuaNV.cs</DependentUpon>
     </EmbeddedResource>

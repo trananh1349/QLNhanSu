@@ -112,5 +112,10 @@ namespace QuanLyNhanSu
         {
             AddTabPages(Views.uctXoaNV.xoanv, 4, "Xóa nhân viên");
         }
+
+        private void btnChangePassword_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctDoiMatKhau.uctChangePassword, 4, "Đổi Mật Khẩu");
+        }
     }
 }
