@@ -31,7 +31,8 @@ namespace QuanLyNhanSu.Views
 
         private void uctTimKiemNV_Load(object sender, EventArgs e)
         {
-            string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            //string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            string sqlconnectStr = "Data Source=DESKTOP-2NJ6H39;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
             SqlConnection connection = new SqlConnection(sqlconnectStr);
             connection.Open();
             //Lay danh sach chuc vu
@@ -63,7 +64,8 @@ namespace QuanLyNhanSu.Views
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             dataGridViewTimKiem.DataSource = null;
-            string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            //string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            string sqlconnectStr = "Data Source=DESKTOP-2NJ6H39;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
             SqlConnection connection = new SqlConnection(sqlconnectStr);
             connection.Open();
             //Tim kiem theo yeu cau
