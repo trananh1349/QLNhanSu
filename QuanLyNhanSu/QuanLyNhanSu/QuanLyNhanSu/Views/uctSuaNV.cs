@@ -19,20 +19,60 @@ namespace QuanLyNhanSu.Views
         DataTable dtNhanVien = new DataTable();
 
         public static string name, gender, address, teleNum, IDN, race, contract, level, department, position, wage, dateOB;
-        public static string staffID;
-        
+
         public uctSuaNV()
         {
             InitializeComponent();
         }
         public static uctSuaNV suanv = new uctSuaNV();
 
-        private void buttonSearch_Click_1(object sender, EventArgs e)
+        public void Appear()
         {
-            string staffID = txtboxID.Text;
-            string query = "select * from NhanVien where MaNV = '" + staffID + "'";
+            txbName.Text = name;
 
-            nhanvien.readDatathroughAdapter(query, dtNhanVien);
+            if (gender == "Nam")
+                radiobM.Checked = true;
+            else
+                radiobF.Checked = true;
+
+            txbAddress.Text = address;
+            txbTeleNum.Text = teleNum;
+            txbIDN.Text = IDN;
+            date.Text = dateOB;
+            txbRace.Text = race;
+
+            if (contract == "HDLD")
+                cbbContract.Text = "Hop dong lao dong";
+            else if (contract == "CTV")
+                cbbContract.Text = "Hop dong CTV";
+
+            if (level == "1")
+                cbbLevel.Text = "Manager";
+            else if (level == "2")
+                cbbLevel.Text = "Development";
+            else if (level == "3")
+                cbbLevel.Text = "Test";
+
+            if (department == "PB02")
+                cbbDepartment.Text = "Phong Ky Thuat";
+            else if (department == "PB03")
+                cbbDepartment.Text = "Phong Hanh Chinh";
+
+            if (position == "GD")
+                cbbPosition.Text = "Giam Doc";
+            else if (position == "NV")
+                cbbPosition.Text = "Nhan Vien";
+            else if (position == "TP")
+                cbbPosition.Text = "Truong Phong";
+
+            if (wage == "LuongHDLD031099005432")
+                txbWage.Text = "5000000";
+            //add more option
+        }
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string query1 = "select * from NhanVien where MaNV = '" + txtboxID.Text + "'";
+            nhanvien.readDatathroughAdapter(query1, dtNhanVien);
             if (dtNhanVien.Rows.Count != 0)
             {
                 //lấy thông tin nhân viên từ dtb
@@ -48,52 +88,24 @@ namespace QuanLyNhanSu.Views
                 position = dtNhanVien.Rows[0]["MaCV"].ToString();
                 wage = dtNhanVien.Rows[0]["MaLuong"].ToString();
                 dateOB = dtNhanVien.Rows[0]["NgaySinh"].ToString();
-
                 //hiện thông tin nhân viên
-                txbName.Text = name;
-
-                if (gender == "Nam")
-                    radiobM.Checked = true;
-                else
-                    radiobF.Checked = true;
-
-                txbAddress.Text = address;
-                txbTeleNum.Text = teleNum;
-                txbIDN.Text = IDN;
-                date.Text = dateOB;
-                txbRace.Text = race;
-                
-                if (contract == "HDLD")
-                    cbbContract.Text = "Hop dong lao dong";
-                else if (contract == "CTV")
-                    cbbContract.Text = "Hop dong CTV";
-                
-                if (level == "1")
-                    cbbLevel.Text = "Manager";
-                else if (level == "2")
-                    cbbLevel.Text = "Development";
-                else if (level == "3")
-                    cbbLevel.Text = "Test";
-
-                if (department == "PB02")
-                    cbbDepartment.Text = "Phong Ky Thuat";
-                else if (department == "PB03")
-                    cbbDepartment.Text = "Phong Hanh Chinh";
-
-                if (position == "GD")
-                    cbbPosition.Text = "Giam Doc";
-                else if (position == "NV")
-                    cbbPosition.Text = "Nhan Vien";
-                else if (position == "TP")
-                    cbbPosition.Text = "Truong Phong";
-
-                if (wage == "LuongHDLD031099005432")
-                    txbWage.Text = "5000000";
+                MessageBox.Show("Tìm kiếm thành công!!!");
+                Appear();                     
             }
-            else
+            else 
             {
-                MessageBox.Show("Vui lòng nhập lại mã nhân viên!!");
+                MessageBox.Show("Vui lòng nhập lại mã nhân viên!!", "Lỗi.");
             }
+        }
+        
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            txtboxID.Clear();
+            /*string sqlconnectStr = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(sqlconnectStr);
+            connection.Close();
+            MessageBox.Show("Vui lòng điền lại mã nhân viên....", "Thông báo.");*/
+
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -109,6 +121,7 @@ namespace QuanLyNhanSu.Views
             teleNum = txbTeleNum.Text;
             IDN = txbIDN.Text;
             dateOB = date.Value.ToString();
+
             if (cbbContract.Text == "Hợp đồng lao động")
                 contract = "HDLD";
             else if (cbbContract.Text == "Hợp đồng CTV")
@@ -137,17 +150,19 @@ namespace QuanLyNhanSu.Views
                 wage = "LuongHDLD031099005432";
 
 
-            string query = "update NhanVien set HoTen = '" + @name + "', GioiTinh = '" + @gender + "', DiaChi = '" + @address + "', SDT = '" + @teleNum + "', CMTND = '" + @IDN + "', MaHD = '" + @contract 
+            string query2 = "update NhanVien set HoTen = '" + @name + "', GioiTinh = '" + @gender + "', DiaChi = '" + @address + "', SDT = '" + @teleNum + "', CMTND = '" + @IDN + "', MaHD = '" + @contract 
                 + "', MaTrinhDo = '" + @level + "', MaPhongBan = '" + @department + "', MaCV = '" + @position + "', MaLuong = '" + wage + "', NgaySinh = '" + @dateOB   
                 + "' where MaNV = '" + txtboxID.Text + "'";
-            SqlCommand update = new SqlCommand(query);
-            
-            int row = nhanvien.executeQuery(update);
-            if (row != 0)
+            SqlCommand update = new SqlCommand(query2);
+                        
+            if (nhanvien.executeQuery(update) != 0)
                 MessageBox.Show("Chỉnh sửa thành công.", "Chúc mừng.");
             else
-                MessageBox.Show("Chỉnh sửa không thành công!!!");
+                MessageBox.Show("Chỉnh sửa không thành công!!!", "Lỗi.");
         }
     }
-    //private static string strConnString = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True"; //Tung
+    //private static string strConnString = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True"; 
+    //string sqlconnectStr = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+    //SqlConnection connection = new SqlConnection(sqlconnectStr);
+    //connection.Open();
 }

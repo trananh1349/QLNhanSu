@@ -58,6 +58,7 @@
             this.labelID = new System.Windows.Forms.Label();
             this.txtboxID = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.gboxEdit.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,14 +91,13 @@
             this.gboxEdit.Controls.Add(this.label3);
             this.gboxEdit.Controls.Add(this.label2);
             this.gboxEdit.Controls.Add(this.label1);
-            this.gboxEdit.Location = new System.Drawing.Point(38, 107);
+            this.gboxEdit.Location = new System.Drawing.Point(31, 86);
             this.gboxEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gboxEdit.Name = "gboxEdit";
             this.gboxEdit.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gboxEdit.Size = new System.Drawing.Size(882, 620);
             this.gboxEdit.TabIndex = 8;
             this.gboxEdit.TabStop = false;
-            this.gboxEdit.Text = "Chỉnh sửa nhân viên";
             // 
             // cbbLevel
             // 
@@ -386,7 +386,7 @@
             // 
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
-            this.labelID.Location = new System.Drawing.Point(92, 37);
+            this.labelID.Location = new System.Drawing.Point(25, 37);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(198, 31);
             this.labelID.TabIndex = 9;
@@ -395,7 +395,7 @@
             // txtboxID
             // 
             this.txtboxID.Font = new System.Drawing.Font("Verdana", 12F);
-            this.txtboxID.Location = new System.Drawing.Point(327, 32);
+            this.txtboxID.Location = new System.Drawing.Point(255, 32);
             this.txtboxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtboxID.Multiline = true;
             this.txtboxID.Name = "txtboxID";
@@ -405,15 +405,28 @@
             // buttonSearch
             // 
             this.buttonSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 14F);
-            this.buttonSearch.Location = new System.Drawing.Point(730, 30);
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 13F);
+            this.buttonSearch.Location = new System.Drawing.Point(633, 20);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(137, 48);
             this.buttonSearch.TabIndex = 28;
             this.buttonSearch.Text = "Tìm kiếm";
             this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click_1);
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.buttonReset.Font = new System.Drawing.Font("Verdana", 10F);
+            this.buttonReset.Location = new System.Drawing.Point(776, 20);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(137, 48);
+            this.buttonReset.TabIndex = 29;
+            this.buttonReset.Text = "Xóa toàn bộ";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // uctSuaNV
             // 
@@ -423,12 +436,13 @@
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.txtboxID);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.gboxEdit);
             this.Name = "uctSuaNV";
-            this.Size = new System.Drawing.Size(955, 741);
+            this.Size = new System.Drawing.Size(946, 726);
             this.gboxEdit.ResumeLayout(false);
             this.gboxEdit.PerformLayout();
             this.ResumeLayout(false);
@@ -468,5 +482,6 @@
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.TextBox txtboxID;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonReset;
     }
 }
