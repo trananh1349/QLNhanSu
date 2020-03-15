@@ -32,11 +32,7 @@ namespace QuanLyNhanSu.Views
         private void uctTimKiemNV_Load(object sender, EventArgs e)
         {
             //string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-<<<<<<< HEAD
-            string sqlconnectStr = "Data Source=DESKTOP-2NJ6H39;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-=======
             string sqlconnectStr = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
->>>>>>> 1dc399c1b6b67589eb08ab816c5cf7daa91ade2b
             SqlConnection connection = new SqlConnection(sqlconnectStr);
             connection.Open();
             //Lay danh sach chuc vu
@@ -69,12 +65,7 @@ namespace QuanLyNhanSu.Views
         {
             dataGridViewTimKiem.DataSource = null;
             //string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-<<<<<<< HEAD
-            string sqlconnectStr = "Data Source=DESKTOP-2NJ6H39;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-=======
-            string sqlconnectStr = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
->>>>>>> 1dc399c1b6b67589eb08ab816c5cf7daa91ade2b
-            SqlConnection connection = new SqlConnection(sqlconnectStr);
+            string sqlconnectStr = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";            SqlConnection connection = new SqlConnection(sqlconnectStr);
             connection.Open();
             //Tim kiem theo yeu cau
             SqlDataAdapter da = new SqlDataAdapter("select * from NhanVien nv,PhongBan pb,ChucVu cv where nv.MaPhongBan = pb.MaPhongBan and " +
