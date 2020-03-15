@@ -130,6 +130,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -155,6 +156,7 @@
             this.btnThongTin.Name = "btnThongTin";
             this.btnThongTin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnThongTin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTin_ItemClick);
             // 
             // btnAddNV
             // 
@@ -178,9 +180,9 @@
             // 
             // btnDeleteNV
             // 
-            this.btnDeleteNV.Caption = "Xóa Nhân Viên";
+            this.btnDeleteNV.Caption = "Tìm Kiếm Và Xóa Nhân Viên";
             this.btnDeleteNV.Id = 9;
-            this.btnDeleteNV.ImageOptions.ImageIndex = 6;
+            this.btnDeleteNV.ImageOptions.ImageIndex = 8;
             this.btnDeleteNV.Name = "btnDeleteNV";
             this.btnDeleteNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -239,7 +241,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnAddNV);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEditNV);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDeleteNV);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnSearchNV);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Quản Lý Nhân Viên";
             // 

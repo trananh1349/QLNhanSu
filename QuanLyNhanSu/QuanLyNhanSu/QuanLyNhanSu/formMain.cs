@@ -90,7 +90,7 @@ namespace QuanLyNhanSu
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages(Views.uctTimKiemNV.timkiemnv, 4, "Tìm kiếm nhân viên");
+
         }
 
         private void btnSignup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -116,6 +116,22 @@ namespace QuanLyNhanSu
         private void btnChangePassword_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages(Views.uctDoiMatKhau.uctChangePassword, 4, "Đổi Mật Khẩu");
+        }
+
+        private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult dialog = XtraMessageBox.Show("Bạn có muốn đăng xuất ? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                Hide();
+                formLogin form = new formLogin();
+                form.Show();
+            }              
+        }
+
+        private void btnThongTin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctNhanVien.NhanVien, 4, "Danh Sách Nhân Viên");         
         }
     }
 }
