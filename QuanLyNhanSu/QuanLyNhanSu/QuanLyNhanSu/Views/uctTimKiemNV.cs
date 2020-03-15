@@ -27,19 +27,19 @@ namespace QuanLyNhanSu.Views
 
         }
 
-     
+
 
         private void uctTimKiemNV_Load(object sender, EventArgs e)
         {
             //string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
             string sqlconnectStr = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(sqlconnectStr);
+            SqlConnection connection = new SqlConnection(sqlconnectStr);
             connection.Open();
             //Lay danh sach chuc vu
-            SqlCommand cmd = new SqlCommand("select * from ChucVu",connection);
+            SqlCommand cmd = new SqlCommand("select * from ChucVu", connection);
             SqlCommand _cmd = new SqlCommand("select * from PhongBan", connection);
-           
-            using(SqlDataReader result = cmd.ExecuteReader())
+
+            using (SqlDataReader result = cmd.ExecuteReader())
             {
                 while (result.Read())
                 {
@@ -55,7 +55,7 @@ namespace QuanLyNhanSu.Views
                     cbxPhongBan.Items.Add(_result[1]);
                 }
             }
-            
+
 
             connection.Close();
 
@@ -66,11 +66,11 @@ namespace QuanLyNhanSu.Views
             dataGridViewTimKiem.DataSource = null;
             //string sqlconnectStr = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
             string sqlconnectStr = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(sqlconnectStr);
+            SqlConnection connection = new SqlConnection(sqlconnectStr);
             connection.Open();
             //Tim kiem theo yeu cau
             SqlDataAdapter da = new SqlDataAdapter("select * from NhanVien nv,PhongBan pb,ChucVu cv where nv.MaPhongBan = pb.MaPhongBan and " +
-                "nv.MaCV = cv.MaCV and nv.HoTen like N'%"+txtTen.Text+"%' and pb.TenPhongBan like N'%"+cbxPhongBan.Text+"%' and cv.TenCV like N'%"+cbxChucVu.Text+"%'",connection);
+                "nv.MaCV = cv.MaCV and nv.HoTen like N'%" + txtTen.Text + "%' and pb.TenPhongBan like N'%" + cbxPhongBan.Text + "%' and cv.TenCV like N'%" + cbxChucVu.Text + "%'", connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewTimKiem.DataSource = dt;
