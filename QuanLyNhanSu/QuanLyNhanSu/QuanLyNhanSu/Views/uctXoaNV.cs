@@ -16,7 +16,6 @@ namespace QuanLyNhanSu.Views
     public partial class uctXoaNV : DevExpress.XtraEditors.XtraUserControl
     {
         AccessDataBase db = new AccessDataBase();
-        DataTable dttb = new DataTable();
         public uctXoaNV()
         {
             InitializeComponent();
@@ -27,11 +26,18 @@ namespace QuanLyNhanSu.Views
 
         private void uctXoaNV_Load(object sender, EventArgs e)
         {
+            DataTable dttbLoad = new DataTable();
             string query = "Select * From NhanVien";
-            db.readDatathroughAdapter(query, dttb);
-            dgvXoaNV.DataSource = dttb;
+            db.readDatathroughAdapter(query, dttbLoad);
+            dgvXoaNV.DataSource = dttbLoad;
         }
-
+        private void RefeshList()
+        {
+            DataTable dttbLoad = new DataTable();
+            string query = "Select * From NhanVien";
+            db.readDatathroughAdapter(query, dttbLoad);
+            dgvXoaNV.DataSource = dttbLoad;
+        }
         private void bt1_Click(object sender, EventArgs e)
         {
             if(dgvXoaNV.RowCount == 0)
@@ -49,8 +55,24 @@ namespace QuanLyNhanSu.Views
                 db.executeQuery(deteRow);
                 //Remove khỏi datagird
                 dgvXoaNV.Rows.RemoveAt(selectIndex);
+                //dgvXoaNV.DataSource = dttbLoad;
+                this.RefeshList();
             }
-           
+
+        }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT  nv.* FROM NhanVien nv " +
+                "JOIN PhongBan pb On nv.MaPhongBan = pb.MaPhongBan " +
+                "JOIN ChucVu cv ON nv.MaCV = cv.MaCV " +
+                "WHERE nv.MaNV LIKE N'%" + tbMaNV.Text + "' " +
+                "AND nv.HoTen LIKE N'%" + tbHoTen.Text + "' " +
+                "And pb.TenPhongBan LIKE N'%" + cbPhongBan.Text + "' " +
+                "AND cv.TenCV Like N'%" + cbChucVu.Text + "' ";
+            DataTable dttb = new DataTable();
+            db.readDatathroughAdapter(sql, dttb);
+            dgvXoaNV.DataSource = dttb;
         }
     }
 }

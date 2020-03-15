@@ -17,10 +17,10 @@ namespace QuanLyNhanSu.Models
         //private static string strConnString = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
 
        // private static string strConnString = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-        //private static string strConnString = "Data Source=DESKTOP-2NJ6H39;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+        private static string strConnString = "Data Source=DESKTOP-2NJ6H39;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
 
         //private static string strConnString = "Data Source=DESKTOP-B6771TG;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-        private static string strConnString = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True"; //Tung
+        //private static string strConnString = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True"; //Tung
         public void createConn()
         {
             try
