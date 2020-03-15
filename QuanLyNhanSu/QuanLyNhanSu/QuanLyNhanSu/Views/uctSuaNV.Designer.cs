@@ -59,7 +59,12 @@
             this.txtboxID = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dataGridViewID = new System.Windows.Forms.DataGridView();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewID)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxEdit
@@ -91,7 +96,7 @@
             this.gboxEdit.Controls.Add(this.label3);
             this.gboxEdit.Controls.Add(this.label2);
             this.gboxEdit.Controls.Add(this.label1);
-            this.gboxEdit.Location = new System.Drawing.Point(31, 86);
+            this.gboxEdit.Location = new System.Drawing.Point(16, 87);
             this.gboxEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gboxEdit.Name = "gboxEdit";
             this.gboxEdit.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -418,15 +423,59 @@
             // buttonReset
             // 
             this.buttonReset.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.buttonReset.Font = new System.Drawing.Font("Verdana", 10F);
+            this.buttonReset.Font = new System.Drawing.Font("Verdana", 13F);
             this.buttonReset.Location = new System.Drawing.Point(776, 20);
             this.buttonReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(137, 48);
             this.buttonReset.TabIndex = 29;
-            this.buttonReset.Text = "Xóa toàn bộ";
+            this.buttonReset.Text = "Clear All";
             this.buttonReset.UseVisualStyleBackColor = false;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(924, 87);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(329, 26);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Danh sách mã nhân viên:";
+            // 
+            // dataGridViewID
+            // 
+            this.dataGridViewID.AllowUserToAddRows = false;
+            this.dataGridViewID.AllowUserToDeleteRows = false;
+            this.dataGridViewID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNV,
+            this.HoTen});
+            this.dataGridViewID.Location = new System.Drawing.Point(929, 123);
+            this.dataGridViewID.Name = "dataGridViewID";
+            this.dataGridViewID.ReadOnly = true;
+            this.dataGridViewID.RowHeadersWidth = 51;
+            this.dataGridViewID.RowTemplate.Height = 24;
+            this.dataGridViewID.Size = new System.Drawing.Size(324, 208);
+            this.dataGridViewID.TabIndex = 32;
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "MaNV";
+            this.MaNV.MinimumWidth = 25;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Visible = false;
+            this.MaNV.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "HoTen";
+            this.HoTen.MinimumWidth = 25;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Visible = false;
+            this.HoTen.Width = 125;
             // 
             // uctSuaNV
             // 
@@ -434,17 +483,22 @@
             this.Appearance.ForeColor = System.Drawing.Color.Black;
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.Controls.Add(this.dataGridViewID);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.txtboxID);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.gboxEdit);
             this.Name = "uctSuaNV";
-            this.Size = new System.Drawing.Size(946, 726);
+            this.Size = new System.Drawing.Size(1270, 726);
+            this.Load += new System.EventHandler(this.uctSuaNV_Load);
             this.gboxEdit.ResumeLayout(false);
             this.gboxEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,5 +537,9 @@
         private System.Windows.Forms.TextBox txtboxID;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dataGridViewID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
     }
 }

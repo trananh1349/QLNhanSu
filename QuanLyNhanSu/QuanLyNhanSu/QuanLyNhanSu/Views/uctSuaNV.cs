@@ -26,6 +26,19 @@ namespace QuanLyNhanSu.Views
         }
         public static uctSuaNV suanv = new uctSuaNV();
 
+        private void uctSuaNV_Load(object sender, EventArgs e)
+        {
+            string sqlconnectStr = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(sqlconnectStr);
+            connection.Open();
+
+            //Lấy danh sách mã Nhân Viên
+            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", connection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridViewID.DataSource = dt;
+        }
+
         public void Appear()
         {
             txbName.Text = name;
@@ -98,14 +111,27 @@ namespace QuanLyNhanSu.Views
             }
         }
         
-        private void buttonReset_Click(object sender, EventArgs e)
+        public void ClearAll()
         {
             txtboxID.Clear();
-            /*string sqlconnectStr = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(sqlconnectStr);
-            connection.Close();
-            MessageBox.Show("Vui lòng điền lại mã nhân viên....", "Thông báo.");*/
-
+            txbName.Clear();
+            radiobM.Checked = false;
+            radiobF.Checked = false;
+            txbAddress.Clear();
+            txbTeleNum.Clear();
+            txbIDN.Clear();
+            date.ResetText();
+            txbRace.Clear();
+            cbbContract.ResetText();
+            cbbLevel.ResetText();
+            cbbDepartment.ResetText();
+            cbbPosition.ResetText();
+            txbWage.Clear();
+        }
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+            dtNhanVien.Clear();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -122,9 +148,9 @@ namespace QuanLyNhanSu.Views
             IDN = txbIDN.Text;
             dateOB = date.Value.ToString();
 
-            if (cbbContract.Text == "Hợp đồng lao động")
+            if (cbbContract.Text == "Hop dong lao dong")
                 contract = "HDLD";
-            else if (cbbContract.Text == "Hợp đồng CTV")
+            else if (cbbContract.Text == "Hop dong CTV")
                 contract = "CTV";
             
             if (cbbLevel.Text == "Manager")
