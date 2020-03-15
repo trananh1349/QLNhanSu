@@ -32,9 +32,9 @@ bld/
 [Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
-.vs/
-/QuanLyNhanSu/.vs
-/QuanLyNhanSu/QuanLyNhanSu/.vs
+.vs
+/QuanLyNhanSu/.vs/
+/QuanLyNhanSu/QuanLyNhanSu/.vs/
 /QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/obj/
 /QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/bin/
 /QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/Properties/
