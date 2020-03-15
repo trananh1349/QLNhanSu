@@ -32,11 +32,12 @@ bld/
 [Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
-QuanLyNhanSu/.vs/
-QuanLyNhanSu/QuanLyNhanSu/.vs/
-QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/obj/Debug/
-QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/bin/Debug/
-QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/Properties/
+.vs
+/QuanLyNhanSu/.vs/
+/QuanLyNhanSu/QuanLyNhanSu/.vs/
+/QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/obj/
+/QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/bin/
+/QuanLyNhanSu/QuanLyNhanSu/QuanLyNhanSu/Properties/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
