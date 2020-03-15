@@ -131,6 +131,9 @@
     <EmbeddedResource Include="Views\uctThemNV.resx">
       <DependentUpon>uctThemNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\uctTimKiemNV.resx">
+      <DependentUpon>uctTimKiemNV.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
