@@ -90,9 +90,7 @@ namespace QuanLyNhanSu.Views
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             //ấn nút tìm kiếm để lấy thông tin Nhân viên
-            string query1 = "select * from NhanVien where MaNV = '" + txtboxID.Text +
-
-"'";
+            string query1 = "select * from NhanVien where MaNV = '" + txtboxID.Text + "'";
             nhanvien.readDatathroughAdapter(query1, dtNhanVien);
             if (dtNhanVien.Rows.Count != 0)
             {
