@@ -55,6 +55,8 @@
             this.ctMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTrangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTấtCảTrangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabHienThi)).BeginInit();
@@ -78,9 +80,10 @@
             this.btnEditNV,
             this.btnDeleteNV,
             this.btnSearchNV,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 12;
+            this.ribbonControl.MaxItemId = 13;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage3,
@@ -101,6 +104,7 @@
             this.imageCollection.Images.SetKeyName(7, "edit_user.png");
             this.imageCollection.Images.SetKeyName(8, "Search_user.png");
             this.imageCollection.Images.SetKeyName(9, "Info-icon.png");
+            this.imageCollection.Images.SetKeyName(10, "statistical.png");
             // 
             // btnDangNhap
             // 
@@ -232,7 +236,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup5});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Quản Lý";
             // 
@@ -292,6 +297,22 @@
             this.đóngTấtCảTrangToolStripMenuItem.Text = "Đóng tất cả trang";
             this.đóngTấtCảTrangToolStripMenuItem.Click += new System.EventHandler(this.đóngTấtCảTrangToolStripMenuItem_Click);
             // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Thống Kê";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "ThốngKê";
+            this.barButtonItem2.Id = 12;
+            this.barButtonItem2.ImageOptions.ImageIndex = 10;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,6 +364,8 @@
         private DevExpress.XtraBars.BarButtonItem btnDeleteNV;
         private DevExpress.XtraBars.BarButtonItem btnSearchNV;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }
 

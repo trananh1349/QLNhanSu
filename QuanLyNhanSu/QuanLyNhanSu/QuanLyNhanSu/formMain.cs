@@ -133,5 +133,10 @@ namespace QuanLyNhanSu
         {
             AddTabPages(Views.uctNhanVien.NhanVien, 4, "Danh Sách Nhân Viên");         
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctThongKe.thongke, 4, "Thống Kê");
+        }
     }
 }

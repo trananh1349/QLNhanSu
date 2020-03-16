@@ -28,14 +28,10 @@ namespace QuanLyNhanSu.Views
 
         private void uctSuaNV_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             AccessDataBase db = new AccessDataBase();
             db.createConn();
 
             //Lấy danh sách mã Nhân Viên
-=======
-            //Lấy danh sách mã Nhân Viên vào bảng bên cạnh
->>>>>>> bebd9fd122200d8a037837a948e064cb341d8bde
             SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", AccessDataBase.connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
