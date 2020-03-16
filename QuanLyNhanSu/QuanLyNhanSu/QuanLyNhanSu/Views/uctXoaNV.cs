@@ -44,7 +44,7 @@ namespace QuanLyNhanSu.Views
             {
                 bt1.Enabled = false;
             }
-            else if(MessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            else if(XtraMessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 // Chỉ mục hiện tại
                 int selectIndex = dgvXoaNV.SelectedRows[0].Index;

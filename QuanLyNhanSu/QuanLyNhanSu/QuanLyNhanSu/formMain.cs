@@ -138,5 +138,25 @@ namespace QuanLyNhanSu
         {
             AddTabPages(Views.uctThongKe.thongke, 4, "Thống Kê");
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctLuong.luong, 4, "Lương");
+        }
+
+        private void barButtonItem4_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctHopDong.hopdong, 4, "Hợp Đồng");
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctTrinhDo.trinhdo, 4, "Trình Độ");
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctPhongBan.phongban, 4, "Phòng Ban");
+        }
     }
 }

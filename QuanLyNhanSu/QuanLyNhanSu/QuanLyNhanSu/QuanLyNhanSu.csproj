@@ -87,17 +87,41 @@
     <Compile Include="Views\uctDoiMatKhau.Designer.cs">
       <DependentUpon>uctDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\uctHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctHopDong.Designer.cs">
+      <DependentUpon>uctHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\uctLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctLuong.Designer.cs">
+      <DependentUpon>uctLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\uctNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\uctNhanVien.Designer.cs">
       <DependentUpon>uctNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\uctPhongBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctPhongBan.Designer.cs">
+      <DependentUpon>uctPhongBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\uctThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\uctThongKe.Designer.cs">
       <DependentUpon>uctThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\uctTrinhDo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctTrinhDo.Designer.cs">
+      <DependentUpon>uctTrinhDo.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\uctXoaNV.cs">
       <SubType>UserControl</SubType>
