@@ -93,6 +93,12 @@
     <Compile Include="Views\uctNhanVien.Designer.cs">
       <DependentUpon>uctNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\uctThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctThongKe.Designer.cs">
+      <DependentUpon>uctThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\uctXoaNV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\uctThemNV.resx">
       <DependentUpon>uctThemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\uctThongKe.resx">
+      <DependentUpon>uctThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\uctXoaNV.resx">
       <DependentUpon>uctXoaNV.cs</DependentUpon>
