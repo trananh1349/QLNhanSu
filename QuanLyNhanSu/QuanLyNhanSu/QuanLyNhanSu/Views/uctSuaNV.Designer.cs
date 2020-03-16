@@ -439,9 +439,9 @@
             this.label13.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(924, 87);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(329, 26);
+            this.label13.Size = new System.Drawing.Size(283, 26);
             this.label13.TabIndex = 31;
-            this.label13.Text = "Danh sách mã nhân viên:";
+            this.label13.Text = "Danh sách nhân viên:";
             // 
             // dataGridViewID
             // 
