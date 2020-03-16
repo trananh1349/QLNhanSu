@@ -15,7 +15,7 @@ namespace QuanLyNhanSu.Views
 {
     public partial class uctSuaNV : DevExpress.XtraEditors.XtraUserControl
     {
-        AccessDataBase nhanvien = new AccessDataBase();
+        AccessDataBase nhanvien = new AccessDataBase(); 
         DataTable dtNhanVien = new DataTable();
 
         public static string name, gender, address, teleNum, IDN, race, contract, level, department, position, wage, dateOB;
@@ -28,12 +28,8 @@ namespace QuanLyNhanSu.Views
 
         private void uctSuaNV_Load(object sender, EventArgs e)
         {
-            string sqlconnectStr = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(sqlconnectStr);
-            connection.Open();
-
-            //Lấy danh sách mã Nhân Viên
-            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", connection);
+            //Lấy danh sách mã Nhân Viên vào bảng bên cạnh
+            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", AccessDataBase.connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewID.DataSource = dt;
@@ -41,6 +37,7 @@ namespace QuanLyNhanSu.Views
 
         public void Appear()
         {
+            //xuất hiện các thông tin của Nhân viên tương ứng
             txbName.Text = name;
 
             if (gender == "Nam")
@@ -84,6 +81,7 @@ namespace QuanLyNhanSu.Views
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            //ấn nút tìm kiếm để lấy thông tin Nhân viên
             string query1 = "select * from NhanVien where MaNV = '" + txtboxID.Text + "'";
             nhanvien.readDatathroughAdapter(query1, dtNhanVien);
             if (dtNhanVien.Rows.Count != 0)
@@ -113,6 +111,7 @@ namespace QuanLyNhanSu.Views
         
         public void ClearAll()
         {
+            //xóa nhanh toàn bộ thông tin có trên màn hình
             txtboxID.Clear();
             txbName.Clear();
             radiobM.Checked = false;
@@ -130,12 +129,14 @@ namespace QuanLyNhanSu.Views
         }
         private void buttonReset_Click(object sender, EventArgs e)
         {
+            //ấn nút reset để xóa nhanh và chỉnh sửa Nhân viên khác
             ClearAll();
             dtNhanVien.Clear();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            //ấn nút Chỉnh sửa để thực hiện thao tác chỉnh sửa
             name = txbName.Text;
 
             if (radiobM.Checked == true)
