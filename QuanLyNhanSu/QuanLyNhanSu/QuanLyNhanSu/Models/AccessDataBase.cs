@@ -10,7 +10,7 @@ namespace QuanLyNhanSu.Models
 {
     class AccessDataBase
     {
-        private static SqlConnection connection = new SqlConnection();
+        public static SqlConnection connection = new SqlConnection();
         private static SqlCommand command = new SqlCommand();
         private static SqlDataAdapter adapter = new SqlDataAdapter();
         //private static string strConnString = "Data Source=DESKTOP-PGQHHD3\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
@@ -60,7 +60,7 @@ namespace QuanLyNhanSu.Models
                     createConn();
                 dbCommend.Connection = connection;
                 dbCommend.CommandType = CommandType.Text;
-                return dbCommend.ExecuteNonQuery();
+                return dbCommend.ExecuteScalar();
             }
             catch (Exception err)
             {

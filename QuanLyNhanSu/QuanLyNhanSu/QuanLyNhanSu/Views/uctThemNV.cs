@@ -34,9 +34,8 @@ namespace QuanLyNhanSu.Views
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            string sqlconnectStr = "Data Source=DESKTOP-8V08BMC\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(sqlconnectStr);
-            connection.Open();
+            AccessDataBase db = new AccessDataBase();
+            db.createConn();
             string gioiTinh, maphongBan, maloaiHopDong, machucVu, maNhanVien, maLuong, maTrinhDo;
             //Mã nhân viên
             maNhanVien = "BA" + txbCMND.Text;
@@ -82,7 +81,7 @@ namespace QuanLyNhanSu.Views
             else
             {
                 int dem = 0;
-                SqlCommand query_name = new SqlCommand("SELECT CMTND FROM NhanVien WHERE CMTND LIKE '" + txbCMND.Text + "'", connection);
+                SqlCommand query_name = new SqlCommand("SELECT CMTND FROM NhanVien WHERE CMTND LIKE '" + txbCMND.Text + "'", AccessDataBase.connection);
                 using (SqlDataReader reader = query_name.ExecuteReader())
                 {
                     if (reader.HasRows)

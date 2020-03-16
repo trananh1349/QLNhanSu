@@ -28,12 +28,11 @@ namespace QuanLyNhanSu.Views
 
         private void uctSuaNV_Load(object sender, EventArgs e)
         {
-            string sqlconnectStr = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(sqlconnectStr);
-            connection.Open();
+            AccessDataBase db = new AccessDataBase();
+            db.createConn();
 
             //Lấy danh sách mã Nhân Viên
-            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", connection);
+            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", AccessDataBase.connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewID.DataSource = dt;
