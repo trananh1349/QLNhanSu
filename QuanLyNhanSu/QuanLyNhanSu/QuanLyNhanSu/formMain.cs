@@ -45,7 +45,7 @@ namespace QuanLyNhanSu
         }
         public void DongTatCaTab()
         {
-            while(tabHienThi.TabPages.Count > 0)
+            while (tabHienThi.TabPages.Count > 0)
             {
                 DongTabHienTai();
             }
@@ -57,18 +57,25 @@ namespace QuanLyNhanSu
         }
         private void formMain_Load(object sender, EventArgs e)
         {
-            Skin();           
+            Skin();
+            //btnThongTin.Enabled = false;
+            //btnChangePassword.Enabled = false;
+            //btnLogout.Enabled = false;
+            //btnAddNV.Enabled = false;
+            //btnEditNV.Enabled = false;
+            //btnDeleteNV.Enabled = false;
+            //btnSearchNV.Enabled = false;
         }
         private void formMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialog = XtraMessageBox.Show("Bạn có muốn thoát ? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.No)
-                e.Cancel = true;  
+                e.Cancel = true;
         }
 
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages(Views.uctDangNhap.login, 4, "Đăng Nhập");
+
         }
 
         private void đóngTrangToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,12 +90,12 @@ namespace QuanLyNhanSu
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages(Views.uctTimKiemNV.timkiemnv, 4, "Tìm kiếm nhân viên");
+
         }
 
         private void btnSignup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages(Views.uctDangKy.signup, 4, "Đăng Ký");
+            
         }
 
         private void btnAddNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -104,6 +111,52 @@ namespace QuanLyNhanSu
         private void btnDeleteNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages(Views.uctXoaNV.xoanv, 4, "Xóa nhân viên");
+        }
+
+        private void btnChangePassword_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctDoiMatKhau.uctChangePassword, 4, "Đổi Mật Khẩu");
+        }
+
+        private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult dialog = XtraMessageBox.Show("Bạn có muốn đăng xuất ? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                Hide();
+                formLogin form = new formLogin();
+                form.Show();
+            }              
+        }
+
+        private void btnThongTin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctNhanVien.NhanVien, 4, "Danh Sách Nhân Viên");         
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctThongKe.thongke, 4, "Thống Kê");
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctLuong.luong, 4, "Lương");
+        }
+
+        private void barButtonItem4_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctHopDong.hopdong, 4, "Hợp Đồng");
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctTrinhDo.trinhdo, 4, "Trình Độ");
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctPhongBan.phongban, 4, "Phòng Ban");
         }
     }
 }
