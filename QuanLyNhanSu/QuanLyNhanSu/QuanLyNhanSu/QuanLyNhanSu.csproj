@@ -163,6 +163,9 @@
     <EmbeddedResource Include="Views\uctDoiMatKhau.resx">
       <DependentUpon>uctDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\uctLuong.resx">
+      <DependentUpon>uctLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\uctNhanVien.resx">
       <DependentUpon>uctNhanVien.cs</DependentUpon>
     </EmbeddedResource>
