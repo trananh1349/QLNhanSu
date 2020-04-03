@@ -76,7 +76,7 @@
             this.gbTrinhDo.Controls.Add(this.label3);
             this.gbTrinhDo.Controls.Add(this.label2);
             this.gbTrinhDo.Controls.Add(this.label1);
-            this.gbTrinhDo.Cursor = System.Windows.Forms.Cursors.NoMove2D;
+            this.gbTrinhDo.Cursor = System.Windows.Forms.Cursors.Default;
             this.gbTrinhDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbTrinhDo.Location = new System.Drawing.Point(3, 3);
             this.gbTrinhDo.Name = "gbTrinhDo";

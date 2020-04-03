@@ -39,8 +39,8 @@ namespace QuanLyNhanSu.Views
         private void btTimKiem_Click(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM TrinhDo Where MaTrinhDo Like N'%" 
-                + tbID_TrinhDo.Text + "' AND TenTrinhDo Like N'%" 
-                + tbName.Text + "' And ChuyenNghanh Like N'%" + tbChuyenNganh.Text +"' ";
+                + tbID_TrinhDo.Text + "%' AND TenTrinhDo Like N'%" 
+                + tbName.Text + "%' And ChuyenNghanh Like N'%" + tbChuyenNganh.Text +"%' ";
             DataTable dttb = new DataTable();
             db.readDatathroughAdapter(sql, dttb);
             dgvTrinhDo.DataSource = dttb;
@@ -101,11 +101,12 @@ namespace QuanLyNhanSu.Views
             
             foreach(DataGridViewRow row in dgvTrinhDo.Rows)
             {
-                saveCom.Parameters["@TTD"].Value = row.Cells["TenTrinhDo"].Value.ToString();
-                saveCom.Parameters["@CN"].Value = row.Cells["ChuyenNghanh"].Value.ToString();
                 saveCom.Parameters["@MTD"].Value = row.Cells["MaTrinhDo"].Value.ToString();
+                saveCom.Parameters["@TTD"].Value = row.Cells["TenTrinhDo"].Value.ToString();
+                saveCom.Parameters["@CN"].Value = row.Cells["ChuyenNghanh"].Value.ToString();     
                 db.executeQuery(saveCom);
             }
+            XtraMessageBox.Show("Lưu thông tin thành công !", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.RefeshList();
         }
     }
