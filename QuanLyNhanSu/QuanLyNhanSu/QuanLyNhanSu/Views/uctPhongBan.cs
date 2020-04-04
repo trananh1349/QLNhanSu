@@ -112,33 +112,40 @@ namespace QuanLyNhanSu.Views
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            SqlCommand saveCom = new SqlCommand(@"UPDATE PhongBan
+            try
+            {
+                SqlCommand saveCom = new SqlCommand(@"UPDATE PhongBan
                                        SET TenPhongBan = @TenPB , 
                                             DiaDiem = @DD ,MaTP = @MTP
                                         WHERE MaPhongBan = @MaPB");
 
-            saveCom.Parameters.Add("@TenPB", SqlDbType.NVarChar).Value = "";
-            saveCom.Parameters.Add("@DD", SqlDbType.VarChar).Value = "";
-            saveCom.Parameters.Add("@MaPB", SqlDbType.VarChar).Value = "";
-            saveCom.Parameters.Add("@MTP", SqlDbType.VarChar).Value = "";
+                saveCom.Parameters.Add("@TenPB", SqlDbType.NVarChar).Value = "";
+                saveCom.Parameters.Add("@DD", SqlDbType.VarChar).Value = "";
+                saveCom.Parameters.Add("@MaPB", SqlDbType.VarChar).Value = "";
+                saveCom.Parameters.Add("@MTP", SqlDbType.VarChar).Value = "";
 
-            int i = 0;
-            foreach (DataGridViewRow row in dgvPhongBan.Rows)
-            {
-                    i++;
-                    if(i == dgvPhongBan.Rows.Count - 1 )
+                int i = 0;
+                foreach (DataGridViewRow row in dgvPhongBan.Rows)
                 {
-                    saveCom.Parameters["@MaPB"].Value = row.Cells["MaPhongBan"].Value.ToString();
-                    saveCom.Parameters["@TenPB"].Value = row.Cells["TenPhongBan"].Value.ToString();
-                    saveCom.Parameters["@DD"].Value = row.Cells["DiaDiem"].Value.ToString();
-                    saveCom.Parameters["@MTP"].Value = row.Cells["MaTP"].Value.ToString();
-                    db.executeQuery(saveCom);
-                }
-                  
+                    i++;
+                    if (i <= dgvPhongBan.Rows.Count - 1)
+                    {
+                        saveCom.Parameters["@MaPB"].Value = row.Cells["MaPhongBan"].Value.ToString();
+                        saveCom.Parameters["@TenPB"].Value = row.Cells["TenPhongBan"].Value.ToString();
+                        saveCom.Parameters["@DD"].Value = row.Cells["DiaDiem"].Value.ToString();
+                        saveCom.Parameters["@MTP"].Value = row.Cells["MaTP"].Value.ToString();
+                        db.executeQuery(saveCom);
+                    }
                     
+
+                }
+                XtraMessageBox.Show("Lưu thành công");
+                ShowList(queryAll);
             }
-            XtraMessageBox.Show("Lưu thành công");
-            ShowList(queryAll);
-        }
+            catch(Exception ex)
+            {
+                XtraMessageBox.Show("Lưu thất bại ! "+ex.ToString());
+            }
+            }   
     }
 }
