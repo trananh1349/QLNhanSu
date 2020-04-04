@@ -38,9 +38,9 @@ namespace QuanLyNhanSu.Views
         }
         private void btTimKiem_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM TrinhDo Where MaTrinhDo Like N'%" 
-                + tbID_TrinhDo.Text + "%' AND TenTrinhDo Like N'%" 
-                + tbName.Text + "%' And ChuyenNghanh Like N'%" + tbChuyenNganh.Text +"%' ";
+            string sql = "SELECT * FROM TrinhDo Where MaTrinhDo Like N'%"
+                + tbID_TrinhDo.Text + "%' AND TenTrinhDo Like N'%"
+                + tbName.Text + "%' And ChuyenNghanh Like N'%" + tbChuyenNganh.Text + "%' ";
             DataTable dttb = new DataTable();
             db.readDatathroughAdapter(sql, dttb);
             dgvTrinhDo.DataSource = dttb;
@@ -48,23 +48,30 @@ namespace QuanLyNhanSu.Views
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (dgvTrinhDo.RowCount == 0)
+            try
             {
-                btXoa.Enabled = false;
+                if (dgvTrinhDo.RowCount == 0)
+                {
+                    btXoa.Enabled = false;
+                }
+                else if (XtraMessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // Chỉ mục hiện tại
+                    int selectIndex = dgvTrinhDo.SelectedRows[0].Index;
+                    string MaTrinhDo = Convert.ToString(dgvTrinhDo[0, selectIndex].Value);
+                    //query
+                    string sql = "DELETE FROM TrinhDo Where MaTrinhDo = '" + MaTrinhDo + "' ;";
+                    SqlCommand deteRow = new SqlCommand(sql);
+                    db.executeQuery(deteRow);
+                    //Remove khỏi datagird
+                    dgvTrinhDo.Rows.RemoveAt(selectIndex);
+                    //dgvXoaNV.DataSource = dttbLoad;
+                    this.RefeshList();
+                }
             }
-            else if (XtraMessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            catch (Exception)
             {
-                // Chỉ mục hiện tại
-                int selectIndex = dgvTrinhDo.SelectedRows[0].Index;
-                string MaTrinhDo = Convert.ToString(dgvTrinhDo[0, selectIndex].Value);
-                //query
-                string sql = "DELETE FROM TrinhDo Where MaTrinhDo = '" + MaTrinhDo + "' ;";
-                SqlCommand deteRow = new SqlCommand(sql);
-                db.executeQuery(deteRow);
-                //Remove khỏi datagird
-                dgvTrinhDo.Rows.RemoveAt(selectIndex);
-                //dgvXoaNV.DataSource = dttbLoad;
-                this.RefeshList();
+                XtraMessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại !", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -73,9 +80,9 @@ namespace QuanLyNhanSu.Views
             string sql = "SELECT * FROM TrinhDo Where MaTrinhDo = '" + tbID_TrinhDo.Text + "' ";
             DataTable dttb = new DataTable();
             db.readDatathroughAdapter(sql, dttb);
-            if(dttb.Rows.Count > 0)
+            if (dttb.Rows.Count > 0)
             {
-                XtraMessageBox.Show("Mã Trình Độ đã tồn tại !!","Thông tin" ,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                XtraMessageBox.Show("Mã Trình Độ đã tồn tại !!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -84,7 +91,7 @@ namespace QuanLyNhanSu.Views
                     tbChuyenNganh.Text + "' )";
                 SqlCommand insertCom = new SqlCommand(query);
                 db.executeQuery(insertCom);
-
+                XtraMessageBox.Show("Thêm thông tin thành công !", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.RefeshList();
             }
         }
@@ -98,12 +105,12 @@ namespace QuanLyNhanSu.Views
             saveCom.Parameters.Add("@TTD", SqlDbType.NVarChar).Value = "";
             saveCom.Parameters.Add("@CN", SqlDbType.VarChar).Value = "";
             saveCom.Parameters.Add("@MTD", SqlDbType.VarChar).Value = "";
-            
-            foreach(DataGridViewRow row in dgvTrinhDo.Rows)
+
+            foreach (DataGridViewRow row in dgvTrinhDo.Rows)
             {
                 saveCom.Parameters["@MTD"].Value = row.Cells["MaTrinhDo"].Value.ToString();
                 saveCom.Parameters["@TTD"].Value = row.Cells["TenTrinhDo"].Value.ToString();
-                saveCom.Parameters["@CN"].Value = row.Cells["ChuyenNghanh"].Value.ToString();     
+                saveCom.Parameters["@CN"].Value = row.Cells["ChuyenNghanh"].Value.ToString();
                 db.executeQuery(saveCom);
             }
             XtraMessageBox.Show("Lưu thông tin thành công !", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);

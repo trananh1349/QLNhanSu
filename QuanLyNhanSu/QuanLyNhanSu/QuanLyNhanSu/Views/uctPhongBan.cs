@@ -22,10 +22,10 @@ namespace QuanLyNhanSu.Views
         {
             InitializeComponent();
         }
-     
+
         public void ShowList(string query)
         {
-            
+
             DataTable dt = new DataTable();
             db.readDatathroughAdapter(query, dt);
             dgvPhongBan.DataSource = dt;
@@ -40,7 +40,7 @@ namespace QuanLyNhanSu.Views
             txtDD.Text = "";
             txtMaPB.Text = "PB";
             txtTenPB.Text = "";
-        
+
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace QuanLyNhanSu.Views
             {
                 btnXoa.Enabled = false;
             }
-            else 
+            else
             {
                 try
                 {
@@ -67,14 +67,14 @@ namespace QuanLyNhanSu.Views
                         ShowList(queryAll);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    XtraMessageBox.Show("Error : "+ex.ToString());
+                    XtraMessageBox.Show("Error : " + ex.ToString());
                 }
 
-             
+
             }
-         
+
         }
 
         private void uctPhongBan_Load(object sender, EventArgs e)
@@ -85,28 +85,36 @@ namespace QuanLyNhanSu.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(txtDD.Text == "" || txtMaPB.Text == "" || txtTenPB.Text == "" )
+            try
             {
-                XtraMessageBox.Show("Nhập đầy đủ thông tin");
-            }
-            else
-            {
-                string sql = "SELECT * FROM PhongBan Where MaPhongBan = '" + txtMaPB.Text + "' ";
-                DataTable dt = new DataTable();
-                db.readDatathroughAdapter(sql, dt);
-                if (dt.Rows.Count > 0)
+                if (txtDD.Text == "" || txtMaPB.Text == "" || txtTenPB.Text == "" || tbMaTP.Text == "")
                 {
-                    XtraMessageBox.Show("Mã Phòng Ban đã tồn tại !!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Nhập đầy đủ thông tin");
                 }
                 else
                 {
-                    string query = "Insert Into PhongBan values ('" +
-                        txtMaPB.Text + "', '" + txtTenPB.Text + "', '" +
-                        txtDD.Text + "',null)" ;
-                    SqlCommand insertCom = new SqlCommand(query);
-                    db.executeQuery(insertCom);
-                    ShowList(queryAll);
+                    string sql = "SELECT * FROM PhongBan Where MaPhongBan = '" + txtMaPB.Text + "' ";
+                    DataTable dt = new DataTable();
+                    db.readDatathroughAdapter(sql, dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        XtraMessageBox.Show("Mã Phòng Ban đã tồn tại !!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string query = "Insert PhongBan values ('" +
+                            txtMaPB.Text + "', '" + txtTenPB.Text + "', '" +
+                            txtDD.Text + "','" + tbMaTP.Text + "')";
+                        SqlCommand insertCom = new SqlCommand(query);
+                        db.executeQuery(insertCom);
+                        XtraMessageBox.Show("Thêm thông tin thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ShowList(queryAll);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Đã xảy ra lỗi. Vui lòng thử lại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -136,16 +144,16 @@ namespace QuanLyNhanSu.Views
                         saveCom.Parameters["@MTP"].Value = row.Cells["MaTP"].Value.ToString();
                         db.executeQuery(saveCom);
                     }
-                    
+
 
                 }
                 XtraMessageBox.Show("Lưu thành công");
                 ShowList(queryAll);
             }
-            catch(Exception ex)
+            catch (Exception)
             {
-                XtraMessageBox.Show("Lưu thất bại ! "+ex.ToString());
+                XtraMessageBox.Show("Lỗi thao tác. Vui lòng thử lại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            }   
+        }
     }
 }
