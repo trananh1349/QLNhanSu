@@ -15,7 +15,7 @@ namespace QuanLyNhanSu.Views
 {
     public partial class uctSuaNV : DevExpress.XtraEditors.XtraUserControl
     {
-        AccessDataBase nhanvien = new AccessDataBase();
+        Models.AccessDataBase nhanvien = new Models.AccessDataBase();
         DataTable dtNhanVien = new DataTable();
 
         public static string name, gender, address, teleNum, IDN, race, contract, level, department, position, wageID, dateOB;
@@ -30,7 +30,7 @@ namespace QuanLyNhanSu.Views
         private void uctSuaNV_Load(object sender, EventArgs e)
         {
             //Lấy danh sách mã Nhân Viên vào bảng bên cạnh
-            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", AccessDataBase.connection);
+            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", Models.AccessDataBase.connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewID.DataSource = dt;
