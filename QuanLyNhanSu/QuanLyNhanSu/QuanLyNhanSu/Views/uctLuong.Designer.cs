@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.gboxAdd = new System.Windows.Forms.GroupBox();
-            this.tbID = new System.Windows.Forms.TextBox();
+            this.monthYPicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbStaffID = new System.Windows.Forms.TextBox();
             this.labelID = new System.Windows.Forms.Label();
             this.labelAdd = new System.Windows.Forms.Label();
             this.tbDayAdd = new System.Windows.Forms.TextBox();
@@ -42,7 +44,9 @@
             this.dataGridViewWage = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.gBoxDelete = new System.Windows.Forms.GroupBox();
+            this.monthYPicker2 = new System.Windows.Forms.DateTimePicker();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbWageID = new System.Windows.Forms.TextBox();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.labelEdit = new System.Windows.Forms.Label();
@@ -52,9 +56,6 @@
             this.tbWageEdit = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LuongCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWage)).BeginInit();
             this.gBoxDelete.SuspendLayout();
@@ -63,7 +64,9 @@
             // gboxAdd
             // 
             this.gboxAdd.BackColor = System.Drawing.Color.White;
-            this.gboxAdd.Controls.Add(this.tbID);
+            this.gboxAdd.Controls.Add(this.monthYPicker1);
+            this.gboxAdd.Controls.Add(this.label2);
+            this.gboxAdd.Controls.Add(this.tbStaffID);
             this.gboxAdd.Controls.Add(this.labelID);
             this.gboxAdd.Controls.Add(this.labelAdd);
             this.gboxAdd.Controls.Add(this.tbDayAdd);
@@ -77,19 +80,39 @@
             this.gboxAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gboxAdd.Name = "gboxAdd";
             this.gboxAdd.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gboxAdd.Size = new System.Drawing.Size(634, 368);
+            this.gboxAdd.Size = new System.Drawing.Size(634, 407);
             this.gboxAdd.TabIndex = 8;
             this.gboxAdd.TabStop = false;
             // 
-            // tbID
+            // monthYPicker1
             // 
-            this.tbID.Font = new System.Drawing.Font("Verdana", 14F);
-            this.tbID.Location = new System.Drawing.Point(274, 134);
-            this.tbID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbID.Multiline = true;
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(329, 36);
-            this.tbID.TabIndex = 2;
+            this.monthYPicker1.CustomFormat = "MM - yyyy";
+            this.monthYPicker1.Font = new System.Drawing.Font("Verdana", 14F);
+            this.monthYPicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.monthYPicker1.Location = new System.Drawing.Point(274, 232);
+            this.monthYPicker1.Name = "monthYPicker1";
+            this.monthYPicker1.Size = new System.Drawing.Size(329, 36);
+            this.monthYPicker1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(23, 279);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(229, 32);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Lương cơ bản:";
+            // 
+            // tbStaffID
+            // 
+            this.tbStaffID.Font = new System.Drawing.Font("Verdana", 14F);
+            this.tbStaffID.Location = new System.Drawing.Point(274, 134);
+            this.tbStaffID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbStaffID.Multiline = true;
+            this.tbStaffID.Name = "tbStaffID";
+            this.tbStaffID.Size = new System.Drawing.Size(329, 36);
+            this.tbStaffID.TabIndex = 2;
             // 
             // labelID
             // 
@@ -97,9 +120,9 @@
             this.labelID.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
             this.labelID.Location = new System.Drawing.Point(23, 134);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(209, 32);
+            this.labelID.Size = new System.Drawing.Size(227, 32);
             this.labelID.TabIndex = 22;
-            this.labelID.Text = "Mã số lương:";
+            this.labelID.Text = "Mã nhân viên:";
             // 
             // labelAdd
             // 
@@ -126,7 +149,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(23, 185);
+            this.label1.Location = new System.Drawing.Point(23, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 32);
             this.label1.TabIndex = 19;
@@ -137,11 +160,11 @@
             this.buttonAdd.BackColor = System.Drawing.Color.MidnightBlue;
             this.buttonAdd.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(175, 294);
+            this.buttonAdd.Location = new System.Drawing.Point(172, 340);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(251, 48);
-            this.buttonAdd.TabIndex = 5;
+            this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "Tạo mới";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -164,22 +187,22 @@
             // tbWageAdd
             // 
             this.tbWageAdd.Font = new System.Drawing.Font("Verdana", 14F);
-            this.tbWageAdd.Location = new System.Drawing.Point(274, 236);
+            this.tbWageAdd.Location = new System.Drawing.Point(274, 280);
             this.tbWageAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbWageAdd.Multiline = true;
             this.tbWageAdd.Name = "tbWageAdd";
             this.tbWageAdd.Size = new System.Drawing.Size(329, 36);
-            this.tbWageAdd.TabIndex = 4;
+            this.tbWageAdd.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(23, 236);
+            this.label7.Location = new System.Drawing.Point(23, 234);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(229, 32);
+            this.label7.Size = new System.Drawing.Size(220, 32);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Lương cơ bản:";
+            this.label7.Text = "Tháng - Năm:";
             // 
             // label6
             // 
@@ -196,24 +219,20 @@
             this.dataGridViewWage.AllowUserToAddRows = false;
             this.dataGridViewWage.AllowUserToDeleteRows = false;
             this.dataGridViewWage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewWage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLuong,
-            this.NgayCong,
-            this.LuongCB});
-            this.dataGridViewWage.Location = new System.Drawing.Point(330, 431);
+            this.dataGridViewWage.Location = new System.Drawing.Point(327, 469);
             this.dataGridViewWage.Name = "dataGridViewWage";
             this.dataGridViewWage.ReadOnly = true;
             this.dataGridViewWage.RowHeadersWidth = 51;
             this.dataGridViewWage.RowTemplate.Height = 24;
             this.dataGridViewWage.Size = new System.Drawing.Size(725, 154);
-            this.dataGridViewWage.TabIndex = 34;
+            this.dataGridViewWage.TabIndex = 14;
             this.dataGridViewWage.Click += new System.EventHandler(this.dataGridViewWage_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(565, 402);
+            this.label13.Location = new System.Drawing.Point(562, 440);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(229, 26);
             this.label13.TabIndex = 33;
@@ -222,7 +241,9 @@
             // gBoxDelete
             // 
             this.gBoxDelete.BackColor = System.Drawing.Color.White;
+            this.gBoxDelete.Controls.Add(this.monthYPicker2);
             this.gBoxDelete.Controls.Add(this.buttonSearch);
+            this.gBoxDelete.Controls.Add(this.label3);
             this.gBoxDelete.Controls.Add(this.tbWageID);
             this.gBoxDelete.Controls.Add(this.buttonEdit);
             this.gBoxDelete.Controls.Add(this.labelEdit);
@@ -236,31 +257,51 @@
             this.gBoxDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gBoxDelete.Name = "gBoxDelete";
             this.gBoxDelete.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gBoxDelete.Size = new System.Drawing.Size(754, 310);
+            this.gBoxDelete.Size = new System.Drawing.Size(740, 374);
             this.gBoxDelete.TabIndex = 35;
             this.gBoxDelete.TabStop = false;
+            // 
+            // monthYPicker2
+            // 
+            this.monthYPicker2.CustomFormat = "MM - yyyy";
+            this.monthYPicker2.Font = new System.Drawing.Font("Verdana", 14F);
+            this.monthYPicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.monthYPicker2.Location = new System.Drawing.Point(276, 185);
+            this.monthYPicker2.Name = "monthYPicker2";
+            this.monthYPicker2.Size = new System.Drawing.Size(380, 36);
+            this.monthYPicker2.TabIndex = 10;
             // 
             // buttonSearch
             // 
             this.buttonSearch.BackColor = System.Drawing.Color.Yellow;
             this.buttonSearch.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.buttonSearch.Location = new System.Drawing.Point(675, 89);
+            this.buttonSearch.Location = new System.Drawing.Point(662, 89);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(57, 29);
-            this.buttonSearch.TabIndex = 7;
+            this.buttonSearch.TabIndex = 8;
             this.buttonSearch.Text = "Tìm";
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(25, 187);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(220, 32);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Tháng - Năm:";
+            // 
             // tbWageID
             // 
-            this.tbWageID.Font = new System.Drawing.Font("Verdana", 14F);
+            this.tbWageID.Font = new System.Drawing.Font("Verdana", 12F);
             this.tbWageID.Location = new System.Drawing.Point(276, 82);
             this.tbWageID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbWageID.Multiline = true;
             this.tbWageID.Name = "tbWageID";
             this.tbWageID.Size = new System.Drawing.Size(380, 36);
-            this.tbWageID.TabIndex = 6;
+            this.tbWageID.TabIndex = 7;
             this.tbWageID.TextChanged += new System.EventHandler(this.tbWageID_TextChanged);
             // 
             // buttonEdit
@@ -268,11 +309,11 @@
             this.buttonEdit.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonEdit.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(155, 242);
+            this.buttonEdit.Location = new System.Drawing.Point(155, 296);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(174, 48);
-            this.buttonEdit.TabIndex = 10;
+            this.buttonEdit.TabIndex = 12;
             this.buttonEdit.Text = "Chỉnh sửa";
             this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
@@ -296,7 +337,7 @@
             this.tbDayEdit.Multiline = true;
             this.tbDayEdit.Name = "tbDayEdit";
             this.tbDayEdit.Size = new System.Drawing.Size(380, 36);
-            this.tbDayEdit.TabIndex = 8;
+            this.tbDayEdit.TabIndex = 9;
             // 
             // label4
             // 
@@ -313,11 +354,11 @@
             this.buttonDelete.BackColor = System.Drawing.Color.DarkRed;
             this.buttonDelete.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(442, 242);
+            this.buttonDelete.Location = new System.Drawing.Point(442, 296);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(174, 48);
-            this.buttonDelete.TabIndex = 11;
+            this.buttonDelete.TabIndex = 13;
             this.buttonDelete.Text = "Xóa";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
@@ -325,18 +366,18 @@
             // tbWageEdit
             // 
             this.tbWageEdit.Font = new System.Drawing.Font("Verdana", 14F);
-            this.tbWageEdit.Location = new System.Drawing.Point(276, 186);
+            this.tbWageEdit.Location = new System.Drawing.Point(276, 234);
             this.tbWageEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbWageEdit.Multiline = true;
             this.tbWageEdit.Name = "tbWageEdit";
             this.tbWageEdit.Size = new System.Drawing.Size(380, 36);
-            this.tbWageEdit.TabIndex = 9;
+            this.tbWageEdit.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(25, 186);
+            this.label5.Location = new System.Drawing.Point(25, 234);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(229, 32);
             this.label5.TabIndex = 6;
@@ -352,36 +393,6 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Mã lương:";
             // 
-            // MaLuong
-            // 
-            this.MaLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MaLuong.HeaderText = "MaLuong";
-            this.MaLuong.MinimumWidth = 25;
-            this.MaLuong.Name = "MaLuong";
-            this.MaLuong.ReadOnly = true;
-            this.MaLuong.Visible = false;
-            this.MaLuong.Width = 93;
-            // 
-            // NgayCong
-            // 
-            this.NgayCong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NgayCong.HeaderText = "NgayCong";
-            this.NgayCong.MinimumWidth = 25;
-            this.NgayCong.Name = "NgayCong";
-            this.NgayCong.ReadOnly = true;
-            this.NgayCong.Visible = false;
-            this.NgayCong.Width = 102;
-            // 
-            // LuongCB
-            // 
-            this.LuongCB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LuongCB.HeaderText = "LuongCB";
-            this.LuongCB.MinimumWidth = 6;
-            this.LuongCB.Name = "LuongCB";
-            this.LuongCB.ReadOnly = true;
-            this.LuongCB.Visible = false;
-            this.LuongCB.Width = 93;
-            // 
             // uctLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -391,7 +402,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.gboxAdd);
             this.Name = "uctLuong";
-            this.Size = new System.Drawing.Size(1450, 604);
+            this.Size = new System.Drawing.Size(1445, 643);
             this.Load += new System.EventHandler(this.uctLuong_Load);
             this.gboxAdd.ResumeLayout(false);
             this.gboxAdd.PerformLayout();
@@ -427,10 +438,11 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.TextBox tbWageID;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.TextBox tbStaffID;
         private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayCong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LuongCB;
+        private System.Windows.Forms.DateTimePicker monthYPicker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker monthYPicker2;
+        private System.Windows.Forms.Label label3;
     }
 }

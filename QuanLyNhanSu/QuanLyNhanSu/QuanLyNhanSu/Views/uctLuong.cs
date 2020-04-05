@@ -18,7 +18,8 @@ namespace QuanLyNhanSu.Views
         AccessDataBase nhanvien = new AccessDataBase();
         DataTable dtLuong = new DataTable();
 
-        string wageID, day, wage;
+        string staffID, wageID, day, wage, month, year;
+        DateTime date;
 
         public static uctLuong luong = new uctLuong();
         
@@ -29,8 +30,11 @@ namespace QuanLyNhanSu.Views
 
         private void uctLuong_Load(object sender, EventArgs e)
         {
+            monthYPicker1.CustomFormat = "MM - yyyy";
+            monthYPicker2.CustomFormat = "MM - yyyy";
+
             //Lấy danh sách thông tin lương vào bảng bên cạnh
-            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaLuong, NgayCong, LuongCB from Luong", AccessDataBase.connection);
+            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaLuong, NgayCong, Thang, Nam, LuongCB from Luong", AccessDataBase.connection);
             DataTable dt = new DataTable();
 
             da.Fill(dt);
@@ -39,7 +43,7 @@ namespace QuanLyNhanSu.Views
         private void dataGridViewWage_Click(object sender, EventArgs e)
         {
             //Lấy danh sách thông tin lương vào bảng bên cạnh
-            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaLuong, NgayCong, LuongCB from Luong", AccessDataBase.connection);
+            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaLuong, NgayCong, Thang, Nam, LuongCB from Luong", AccessDataBase.connection);
             DataTable dt = new DataTable();
 
             da.Fill(dt);
@@ -48,22 +52,28 @@ namespace QuanLyNhanSu.Views
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (cbbCateAdd.Text != "" && tbID.Text != "" && tbDayAdd.Text != "" && tbWageAdd.Text != "")
-            {
-                if (cbbCateAdd.Text == "Hop dong lao dong")
+            if (cbbCateAdd.Text != "" && tbStaffID.Text != "" && tbDayAdd.Text != "" && tbWageAdd.Text != "")
+            {              
+                day = tbDayAdd.Text;
+                wage = tbWageAdd.Text;
+                month = monthYPicker1.Value.Month.ToString();
+                if (Int32.Parse(month) < 10)
                 {
-                    wageID = "LuongHDLD" + tbID.Text;
+                    month = "0" + month;
+                }
+                year = monthYPicker1.Value.Year.ToString();
+
+                if (cbbCateAdd.Text == "Hop dong lao dong")
+                {                    
+                    wageID = "LuongHDLD" + tbStaffID.Text + month + year;
                 }
                 else if (cbbCateAdd.Text == "Hop dong CTV")
                 {
-                    wageID = "LuongCTV" + tbID.Text;
+                    wageID = "LuongCTV" + tbStaffID.Text + month + year;
                 }
 
-                day = tbDayAdd.Text;
-                wage = tbWageAdd.Text;
-
                 MessageBox.Show("Thêm thành công. Vui lòng click vào bảng Lương bên dưới để cập nhật!!!", "Thông báo.");
-                SqlCommand add = new SqlCommand("INSERT Luong values('" + wageID + "','" + day + "', '" + wage + "')");
+                SqlCommand add = new SqlCommand("INSERT Luong values('" + wageID + "','" + day + "', '" + wage + "', '" + month + "', '" + year + "')");
                 nhanvien.executeQuery(add);
             }
             else
@@ -79,7 +89,7 @@ namespace QuanLyNhanSu.Views
             tbWageEdit.Clear();
             dtLuong.Clear();
         }
-                
+
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             //ấn nút tìm kiếm để lấy thông tin lương theo mã
@@ -91,10 +101,19 @@ namespace QuanLyNhanSu.Views
                 //lấy thông tin Lương từ dtb
                 day = dtLuong.Rows[0]["NgayCong"].ToString();
                 wage = dtLuong.Rows[0]["LuongCB"].ToString();
-
+                month = dtLuong.Rows[0]["Thang"].ToString();
+                if (Int32.Parse(month) < 10)
+                {
+                    month = "0" + month;
+                }
+                year = dtLuong.Rows[0]["Nam"].ToString();
+                
                 //hiện thông tin Lương
                 tbDayEdit.Text = day;
                 tbWageEdit.Text = wage;
+                monthYPicker2.Value.Month.ToString(month);
+                monthYPicker2.Value.Year.ToString(year);
+                //monthYPicker2.Value.Year.ToString(year);
             }
             else
             {
@@ -104,7 +123,7 @@ namespace QuanLyNhanSu.Views
 
         private void cbbCateAdd_TextChanged(object sender, EventArgs e)
         {
-            tbID.Clear();
+            tbStaffID.Clear();
             tbDayAdd.Clear();
             tbWageAdd.Clear();
         }
@@ -116,8 +135,14 @@ namespace QuanLyNhanSu.Views
                 //
                 day = tbDayEdit.Text;
                 wage = tbWageEdit.Text;
+                month = monthYPicker2.Value.Month.ToString();
+                if (Int32.Parse(month) < 10)
+                {
+                    month = "0" + month;
+                }
+                year = monthYPicker2.Value.Year.ToString();
 
-                SqlCommand edit = new SqlCommand("Update Luong set NgayCong = '" + @day + "', LuongCB = '" + @wage + "' where MaLuong = '" + tbWageID.Text + "'");
+                SqlCommand edit = new SqlCommand("Update Luong set NgayCong = '" + @day + "', LuongCB = '" + @wage + "', Thang = '" + @month + "', Nam = '" + @year + "' where MaLuong = '" + tbWageID.Text + "'");
                 if (nhanvien.executeQuery(edit) != 0)
                     MessageBox.Show("Chỉnh sửa thành công. Vui lòng click vào bảng Lương bên dưới để cập nhật!!! ", "Thông báo.");
                 else
