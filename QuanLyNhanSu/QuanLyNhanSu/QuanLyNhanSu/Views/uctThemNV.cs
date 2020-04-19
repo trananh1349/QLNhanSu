@@ -10,7 +10,7 @@ namespace QuanLyNhanSu.Views
     public partial class uctThemNV : DevExpress.XtraEditors.XtraUserControl
     {
         AccessDataBase nhanvien = new AccessDataBase();
-        
+
         public uctThemNV()
         {
             InitializeComponent();
@@ -101,7 +101,7 @@ namespace QuanLyNhanSu.Views
                 else
                 {
                     //lương
-                    if (IsNumber(txbLuong.Text) == true && IsNumber(txbCMND.Text)==true && IsNumber(txbSDT.Text)==true
+                    if (IsNumber(txbLuong.Text) == true && IsNumber(txbCMND.Text) == true && IsNumber(txbSDT.Text) == true
                         )
                     {
                         int luong = Convert.ToInt32(txbLuong.Text);
@@ -109,12 +109,14 @@ namespace QuanLyNhanSu.Views
                             maLuong = "LuongCTV" + txbCMND.Text;
                         else
                             maLuong = "LuongHDLD" + txbCMND.Text;
+                        string monthNow = DateTime.Now.ToString().Split(' ')[0].Split('/')[1];
+                        string yeahNow = DateTime.Now.ToString().Split(' ')[0].Split('/')[2];
                         //chạy lệnh update Lương
-                        SqlCommand query0 = new SqlCommand("INSERT Luong values ('" + maLuong + "','1','" + txbLuong.Text + "')");
+                        SqlCommand query0 = new SqlCommand("INSERT Luong values ('" + maLuong + "','1','" + txbLuong.Text + "','" + monthNow + "','" + yeahNow + "')");
                         nhanvien.executeQuery(query0);
                         //chạy lệnh update nhân viên
-                        SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "','" + StandardString(txbhoTen.Text) + "', '" + ngaySinh.Value.ToString() + "'," +
-                            " '" + gioiTinh + "', '" + StandardString(txbDanToc.Text) + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', '"
+                        SqlCommand query = new SqlCommand("INSERT NhanVien values('" + maNhanVien + "',N'" + StandardString(txbhoTen.Text) + "', '" + ngaySinh.Value.ToString() + "'," +
+                            " N'" + gioiTinh + "', N'" + StandardString(txbDanToc.Text) + "', '" + txbCMND.Text + "','" + txbSDT.Text + "', N'"
                             + txbDiaChi.Text + "', '" + maphongBan + "', '" + machucVu + "', '" + maloaiHopDong + "', '" + maTrinhDo + "', '" + maLuong + "')");
                         nhanvien.executeQuery(query);
                         XtraMessageBox.Show("Thêm mới nhân viên thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

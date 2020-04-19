@@ -84,7 +84,6 @@
             // 
             this.comboBoxNam.FormattingEnabled = true;
             this.comboBoxNam.Items.AddRange(new object[] {
-            " ",
             "2020",
             "2021",
             "2022",
@@ -105,7 +104,6 @@
             // 
             this.comboBoxThang.FormattingEnabled = true;
             this.comboBoxThang.Items.AddRange(new object[] {
-            " ",
             "1",
             "2",
             "3",

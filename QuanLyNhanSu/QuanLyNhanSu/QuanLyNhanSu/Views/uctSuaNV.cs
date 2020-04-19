@@ -15,7 +15,7 @@ namespace QuanLyNhanSu.Views
 {
     public partial class uctSuaNV : DevExpress.XtraEditors.XtraUserControl
     {
-        Models.AccessDataBase nhanvien = new Models.AccessDataBase();
+        AccessDataBase nhanvien = new AccessDataBase();
         DataTable dtNhanVien = new DataTable();
 
         public static string name, gender, address, teleNum, IDN, race, contract, level, department, position, wageID, dateOB;
@@ -30,10 +30,15 @@ namespace QuanLyNhanSu.Views
         private void uctSuaNV_Load(object sender, EventArgs e)
         {
             //Lấy danh sách mã Nhân Viên vào bảng bên cạnh
-            SqlDataAdapter da = new SqlDataAdapter("select top 1000 MaNV, HoTen from NhanVien", Models.AccessDataBase.connection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridViewID.DataSource = dt;
+            //SqlDataAdapter da = new SqlDataAdapter("select MaNV, HoTen from NhanVien", AccessDataBase.connection);
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //dataGridViewID.DataSource = dt;
+
+            DataTable dttbLoad = new DataTable();
+            string query = "Select MaNV, HoTen From NhanVien";
+            nhanvien.readDatathroughAdapter(query, dttbLoad);
+            dataGridViewID.DataSource = dttbLoad;
         }
 
         public void Appear()
@@ -143,60 +148,68 @@ namespace QuanLyNhanSu.Views
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            //ấn nút Chỉnh sửa để thực hiện thao tác chỉnh sửa
-            name = txbName.Text;
+            try
+            {
+                //ấn nút Chỉnh sửa để thực hiện thao tác chỉnh sửa
+                name = txbName.Text;
 
-            if (radiobM.Checked == true)
-                gender = "Nam";
-            else if (radiobF.Checked == true)
-                gender = "Nu";
+                if (radiobM.Checked == true)
+                    gender = "Nam";
+                else if (radiobF.Checked == true)
+                    gender = "Nu";
 
-            address = txbAddress.Text;
-            teleNum = txbTeleNum.Text;
-            IDN = txbIDN.Text;
-            dateOB = date.Value.ToString();
-            race = txbRace.Text;
+                address = txbAddress.Text;
+                teleNum = txbTeleNum.Text;
+                IDN = txbIDN.Text;
+                dateOB = date.Value.ToString();
+                race = txbRace.Text;
 
-            if (cbbContract.Text == "Hop dong lao dong")
-                contract = "HDLD";
-            else if (cbbContract.Text == "Hop dong CTV")
-                contract = "CTV";
+                if (cbbContract.Text == "Hop dong lao dong")
+                    contract = "HDLD";
+                else if (cbbContract.Text == "Hop dong CTV")
+                    contract = "CTV";
 
-            if (cbbLevel.Text == "Manager")
-                level = "1";
-            else if (cbbLevel.Text == "Development")
-                level = "2";
-            else if (cbbLevel.Text == "Test")
-                level = "3";
+                if (cbbLevel.Text == "Manager")
+                    level = "1";
+                else if (cbbLevel.Text == "Development")
+                    level = "2";
+                else if (cbbLevel.Text == "Test")
+                    level = "3";
 
-            if (cbbDepartment.Text == "Phong Ky Thuat")
-                department = "PB02";
-            else if (cbbDepartment.Text == "Phong Hanh Chinh")
-                department = "PB03";
+                if (cbbDepartment.Text == "Phong Ky Thuat")
+                    department = "PB02";
+                else if (cbbDepartment.Text == "Phong Hanh Chinh")
+                    department = "PB03";
 
-            if (cbbPosition.Text == "Giam Doc")
-                position = "GD";
-            else if (cbbPosition.Text == "Nhan Vien")
-                position = "NV";
-            else if (cbbPosition.Text == "Truong Phong")
-                position = "TP";
+                if (cbbPosition.Text == "Giam Doc")
+                    position = "GD";
+                else if (cbbPosition.Text == "Nhan Vien")
+                    position = "NV";
+                else if (cbbPosition.Text == "Truong Phong")
+                    position = "TP";
 
-            wage = Convert.ToInt32(txbWage.Text);
-            if (wage <= 1000000)
-                wageID = "LuongCTV" + txbIDN.Text;
-            else if (wage > 1000000)
-                wageID = "LuongHDLD" + txbIDN.Text;
+                wage = Convert.ToInt32(txbWage.Text);
+                if (wage <= 1000000)
+                    wageID = "LuongCTV" + txbIDN.Text;
+                else if (wage > 1000000)
+                    wageID = "LuongHDLD" + txbIDN.Text;
 
-            string query = "update NhanVien set HoTen = '" + @name + "', GioiTinh = '" + @gender + "', DiaChi = '" + @address + "', SDT = '" + @teleNum + "', CMTND = '" + @IDN + "', MaHD = '" + @contract
-                + "', MaTrinhDo = '" + @level + "', MaPhongBan = '" + @department + "', MaCV = '" + @position + "', MaLuong = '" + @wageID + "', NgaySinh = '" + @dateOB + "', DanToc = '" + @race
-                + "' where MaNV = '" + txtboxID.Text + "'";
-           
-            SqlCommand update = new SqlCommand(query);
+                string query = "update NhanVien set HoTen = '" + @name + "', GioiTinh = '" + @gender + "', DiaChi = '" + @address + "', SDT = '" + @teleNum + "', CMTND = '" + @IDN + "', MaHD = '" + @contract
+                    + "', MaTrinhDo = '" + @level + "', MaPhongBan = '" + @department + "', MaCV = '" + @position + "', MaLuong = '" + @wageID + "', NgaySinh = '" + @dateOB + "', DanToc = '" + @race
+                    + "' where MaNV = '" + txtboxID.Text + "'";
 
-            if (nhanvien.executeQuery(update) != 0)
-                MessageBox.Show("Chỉnh sửa thành công.", "Chúc mừng.");
-            else
-                MessageBox.Show("Chỉnh sửa không thành công!!!", "Lỗi.");
+                SqlCommand update = new SqlCommand(query);
+
+                if (nhanvien.executeQuery(update) != 0)
+                    MessageBox.Show("Chỉnh sửa thành công.", "Chúc mừng.");
+                else
+                    MessageBox.Show("Chỉnh sửa không thành công!!!", "Lỗi.");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
     //private static string strConnString = "Data Source=WIN7PROX64\\SQLEXPRESS;Initial Catalog = QuanLyNhanSu; Integrated Security = True"; 

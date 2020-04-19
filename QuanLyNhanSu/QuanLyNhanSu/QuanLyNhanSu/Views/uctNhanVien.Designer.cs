@@ -35,9 +35,9 @@
             // dgvNhanVien
             // 
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien.Location = new System.Drawing.Point(0, 0);
+            this.dgvNhanVien.Location = new System.Drawing.Point(18, 12);
             this.dgvNhanVien.Name = "dgvNhanVien";
-            this.dgvNhanVien.Size = new System.Drawing.Size(849, 475);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1378, 513);
             this.dgvNhanVien.TabIndex = 0;
             // 
             // uctNhanVien
@@ -46,7 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvNhanVien);
             this.Name = "uctNhanVien";
-            this.Size = new System.Drawing.Size(742, 456);
+            this.Size = new System.Drawing.Size(1422, 569);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.ResumeLayout(false);
 

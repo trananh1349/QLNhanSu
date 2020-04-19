@@ -49,7 +49,7 @@
             // 
             this.dgvTrinhDo.AllowUserToAddRows = false;
             this.dgvTrinhDo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTrinhDo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgvTrinhDo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Orange;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -66,7 +66,7 @@
             // 
             // gbTrinhDo
             // 
-            this.gbTrinhDo.BackColor = System.Drawing.Color.Honeydew;
+            this.gbTrinhDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.gbTrinhDo.Controls.Add(this.btXoa);
             this.gbTrinhDo.Controls.Add(this.btAdd);
             this.gbTrinhDo.Controls.Add(this.btTimKiem);

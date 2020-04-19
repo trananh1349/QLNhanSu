@@ -19,7 +19,7 @@ namespace QuanLyNhanSu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
-            Application.Run(new formLogin());
+            Application.Run(new formMain());
         }
     }
 }

@@ -33,13 +33,7 @@ namespace QuanLyNhanSu.Views
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            //Nut Tim kiem
-            string queryTimKiem = "Select * from PhongBan where TenPhongBan like N'%" + txtTenPB.Text + "%' and MaPhongBan like N'%" + txtMaPB.Text +
-                "%' and DiaDiem like N'%" + txtDD.Text + "%'";
-            ShowList(queryTimKiem);
-            txtDD.Text = "";
-            txtMaPB.Text = "PB";
-            txtTenPB.Text = "";
+            
 
         }
 
@@ -67,9 +61,9 @@ namespace QuanLyNhanSu.Views
                         ShowList(queryAll);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    XtraMessageBox.Show("Error : " + ex.ToString());
+                    XtraMessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại !", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 }
 
 
@@ -89,7 +83,7 @@ namespace QuanLyNhanSu.Views
             {
                 if (txtDD.Text == "" || txtMaPB.Text == "" || txtTenPB.Text == "" || tbMaTP.Text == "")
                 {
-                    XtraMessageBox.Show("Nhập đầy đủ thông tin");
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -120,6 +114,11 @@ namespace QuanLyNhanSu.Views
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 SqlCommand saveCom = new SqlCommand(@"UPDATE PhongBan
@@ -144,15 +143,31 @@ namespace QuanLyNhanSu.Views
                         saveCom.Parameters["@MTP"].Value = row.Cells["MaTP"].Value.ToString();
                         db.executeQuery(saveCom);
                     }
-
-
                 }
-                XtraMessageBox.Show("Lưu thành công");
+                XtraMessageBox.Show("Sửa thông tin thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ShowList(queryAll);
             }
             catch (Exception)
             {
-                XtraMessageBox.Show("Lỗi thao tác. Vui lòng thử lại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Đã xảy ra lỗi. Vui lòng thử lại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Nut Tim kiem
+                string queryTimKiem = "Select * from PhongBan where TenPhongBan like N'%" + txtTenPB.Text + "%' and MaPhongBan like N'%" + txtMaPB.Text +
+                    "%' and DiaDiem like N'%" + txtDD.Text + "%'";
+                ShowList(queryTimKiem);
+                txtDD.Text = "";
+                txtMaPB.Text = "PB";
+                txtTenPB.Text = "";
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Đã xảy ra lỗi. Vui lòng thử lại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
