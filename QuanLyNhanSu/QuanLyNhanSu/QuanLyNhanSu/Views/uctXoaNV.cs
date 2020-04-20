@@ -40,39 +40,64 @@ namespace QuanLyNhanSu.Views
         }
         private void bt1_Click(object sender, EventArgs e)
         {
-            if(dgvXoaNV.RowCount == 0)
-            {
-                bt1.Enabled = false;
-            }
-            else if(XtraMessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                // Chỉ mục hiện tại
-                int selectIndex = dgvXoaNV.SelectedRows[0].Index;
-                string MaNV = Convert.ToString(dgvXoaNV[0, selectIndex].Value);
-                //query
-                string sql = "DELETE FROM NhanVien Where MaNV = '" + MaNV + "' ;";
-                SqlCommand deteRow = new SqlCommand(sql);
-                db.executeQuery(deteRow);
-                //Remove khỏi datagird
-                dgvXoaNV.Rows.RemoveAt(selectIndex);
-                //dgvXoaNV.DataSource = dttbLoad;
-                this.RefeshList();
-            }
+            
 
         }
 
         private void btTimKiem_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT  nv.* FROM NhanVien nv " +
-                "JOIN PhongBan pb On nv.MaPhongBan = pb.MaPhongBan " +
-                "JOIN ChucVu cv ON nv.MaCV = cv.MaCV " +
+            
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvXoaNV.RowCount == 0)
+                {
+                    bt1.Enabled = false;
+                }
+                else if (XtraMessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // Chỉ mục hiện tại
+                    int selectIndex = dgvXoaNV.SelectedRows[0].Index;
+                    string MaNV = Convert.ToString(dgvXoaNV[0, selectIndex].Value);
+                    //query
+                    string sql = "DELETE FROM NhanVien Where MaNV = '" + MaNV + "' ;";
+                    SqlCommand deteRow = new SqlCommand(sql);
+                    db.executeQuery(deteRow);
+                    //Remove khỏi datagird
+                    dgvXoaNV.Rows.RemoveAt(selectIndex);
+                    //dgvXoaNV.DataSource = dttbLoad;
+                    this.RefeshList();
+                }
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Đã xảy ra lỗi. Vui lòng thử lại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btTimKiem_Click_1(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                string sql = "SELECT  nv.* FROM NhanVien nv " +
+                "inner JOIN PhongBan pb On nv.MaPhongBan = pb.MaPhongBan " +
+                "inner JOIN ChucVu cv ON nv.MaCV = cv.MaCV " +
                 "WHERE nv.MaNV LIKE N'%" + tbMaNV.Text + "' " +
                 "AND nv.HoTen LIKE N'%" + tbHoTen.Text + "' " +
                 "And pb.TenPhongBan LIKE N'%" + cbPhongBan.Text + "' " +
                 "AND cv.TenCV Like N'%" + cbChucVu.Text + "' ";
-            DataTable dttb = new DataTable();
-            db.readDatathroughAdapter(sql, dttb);
-            dgvXoaNV.DataSource = dttb;
+                DataTable dttb = new DataTable();
+                db.readDatathroughAdapter(sql, dttb);
+                dgvXoaNV.DataSource = dttb;
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Đã xảy ra lỗi. Vui lòng thử lại !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

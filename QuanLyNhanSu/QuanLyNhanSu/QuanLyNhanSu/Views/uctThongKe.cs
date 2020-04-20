@@ -15,7 +15,8 @@ namespace QuanLyNhanSu.Views
 {
     public partial class uctThongKe : DevExpress.XtraEditors.XtraUserControl
     {
-        public static uctThongKe thongke = new uctThongKe(); 
+        public static uctThongKe thongke = new uctThongKe();
+        AccessDataBase db = new AccessDataBase();
         public uctThongKe()
         {
             InitializeComponent();
@@ -31,31 +32,52 @@ namespace QuanLyNhanSu.Views
             string ngaythang = comboBoxThang.Text + comboBoxNam.Text;
             if (ten.Trim().Equals("") != true && comboBoxThang.Text.Equals("") != true && comboBoxNam.Text.Equals("") != true)
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE Luong.MaLuong like  '%" + ngaythang + "%' AND HoTen like N'%" + ten + "%'", AccessDataBase.connection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                //SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE Luong.MaLuong like  '%" + ngaythang + "%' AND HoTen like N'%" + ten + "%'", AccessDataBase.connection);
+                //DataTable dt = new DataTable();
+                //da.Fill(dt);
+                //dataGridView1.DataSource = dt;
+
+                DataTable dttbLoad = new DataTable();
+                string query = "SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE Luong.MaLuong like  '%" + ngaythang + "%' AND HoTen like N'%" + ten + "%'";
+                db.readDatathroughAdapter(query, dttbLoad);
+                dataGridView1.DataSource = dttbLoad;
             }
             else if (ten.Trim().Equals("") == true && comboBoxThang.Text.Equals("") == true && comboBoxNam.Text.Equals("") == true)
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong ", AccessDataBase.connection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                //SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong ", AccessDataBase.connection);
+                //DataTable dt = new DataTable();
+                //da.Fill(dt);
+                //dataGridView1.DataSource = dt;
+
+                DataTable dttbLoad = new DataTable();
+                string query = "SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong ";
+                db.readDatathroughAdapter(query, dttbLoad);
+                dataGridView1.DataSource = dttbLoad;
             }
             else if (ten.Trim().Equals("") != true && comboBoxThang.Text.Equals("") == true && comboBoxNam.Text.Equals("") == true)
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE HoTen like N'%" + ten + "%'", AccessDataBase.connection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                //SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE HoTen like N'%" + ten + "%'", AccessDataBase.connection);
+                //DataTable dt = new DataTable();
+                //da.Fill(dt);
+                //dataGridView1.DataSource = dt;
+
+
+                DataTable dttbLoad = new DataTable();
+                string query = "SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE HoTen like N'%" + ten + "%'";
+                db.readDatathroughAdapter(query, dttbLoad);
+                dataGridView1.DataSource = dttbLoad;
             }
             else
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE Luong.MaLuong like  '%" + ngaythang + "%' AND HoTen like N'%" + ten + "%'", AccessDataBase.connection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                //SqlDataAdapter da = new SqlDataAdapter("SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE Luong.MaLuong like  '%" + ngaythang + "%' AND HoTen like N'%" + ten + "%'", AccessDataBase.connection);
+                //DataTable dt = new DataTable();
+                //da.Fill(dt);
+                //dataGridView1.DataSource = dt;
+
+                DataTable dttbLoad = new DataTable();
+                string query = "SELECT HoTen N'Họ và tên',Thang N'Tháng' ,Nam N'Năm',LuongCB N'Lương' FROM NhanVien, Luong WHERE Luong.MaLuong like  '%" + ngaythang + "%' AND HoTen like N'%" + ten + "%'";
+                db.readDatathroughAdapter(query, dttbLoad);
+                dataGridView1.DataSource = dttbLoad;
             }
         }
     }
