@@ -158,5 +158,10 @@ namespace QuanLyNhanSu
         {
             AddTabPages(Views.uctPhongBan.phongban, 4, "Phòng Ban");
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages(Views.uctThongTin.uctInfo, 4, "Thông tin");
+        }
     }
 }

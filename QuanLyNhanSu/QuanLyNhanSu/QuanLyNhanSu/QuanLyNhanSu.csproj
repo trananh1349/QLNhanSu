@@ -127,6 +127,12 @@
     <Compile Include="Views\uctThongKe.Designer.cs">
       <DependentUpon>uctThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\uctThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctThongTin.Designer.cs">
+      <DependentUpon>uctThongTin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\uctTrinhDo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\uctThongKe.resx">
       <DependentUpon>uctThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\uctThongTin.resx">
+      <DependentUpon>uctThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\uctTrinhDo.resx">
       <DependentUpon>uctTrinhDo.cs</DependentUpon>
