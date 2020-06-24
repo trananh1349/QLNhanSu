@@ -233,7 +233,7 @@
             // 
             // barButtonItem2
             // 
-            this.barButtonItem2.Caption = "ThốngKê";
+            this.barButtonItem2.Caption = "Thống Kê Theo Lương";
             this.barButtonItem2.Id = 12;
             this.barButtonItem2.ImageOptions.ImageIndex = 10;
             this.barButtonItem2.Name = "barButtonItem2";
